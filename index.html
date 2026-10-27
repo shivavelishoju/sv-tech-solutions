@@ -1,210 +1,3609 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>YourBrand – Engineering Projects & Science Models</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
+
+<title>SV Tech Solutions – Engineering Projects & Science Models</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+  rel="stylesheet"
+>
+
 <style>
-:root{--bg:#f6f7fb;--card:rgba(255,255,255,.75);--solid:#fff;--ink:#0b1220;--mute:#5d6882;--line:rgba(15,23,42,.1);--a:#ff6a2b;--b:#7c5cff;--c:#00d1c1;--grad:linear-gradient(120deg,var(--a),var(--b));--onA:#fff;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070b16;--card:rgba(255,255,255,.05);--solid:#101730;--ink:#f1f4fb;--mute:#97a3bf;--line:rgba(255,255,255,.1)}}
-:root[data-theme="dark"]{--bg:#070b16;--card:rgba(255,255,255,.05);--solid:#101730;--ink:#f1f4fb;--mute:#97a3bf;--line:rgba(255,255,255,.1)}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px;width:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-h1,h2,h3,.logo{font-family:"Space Grotesk",Inter,system-ui,sans-serif}
-.wrap{width:100%;max-width:none;margin:0;padding:0 clamp(18px,5vw,96px)}
-.glass{background:var(--card);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-header{position:fixed;left:0;right:0;top:calc(12px + env(safe-area-inset-top,0px));z-index:30;padding:0 clamp(10px,3vw,48px)}
-.nav{width:100%;max-width:none;margin:0;height:58px;border-radius:99px;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 24px}
-.logo{font-weight:700;font-size:20px}.logo i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-nav{display:flex;align-items:center;gap:6px}nav a{padding:8px 14px;border-radius:99px;font-size:14px;color:var(--mute)}nav a:hover{color:var(--ink);background:var(--line)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:var(--onA)!important;font-weight:600;padding:13px 26px;border-radius:99px;border:0;cursor:pointer;font:600 15px Inter,sans-serif;box-shadow:0 10px 30px -8px rgba(255,106,43,.6);transition:.25s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(124,92,255,.65)}
-nav .btn{padding:9px 20px;color:#fff!important}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.25);box-shadow:none;color:#fff!important}
-.hero{position:relative;color:#fff;background:#070b16;padding:130px 0 70px;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center}.hero>.wrap{width:100%}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:float 14s ease-in-out infinite}
-.b1{width:420px;height:420px;background:#ff6a2b;top:-120px;left:-80px}.b2{width:480px;height:480px;background:#7c5cff;right:-120px;top:40px;animation-delay:-5s}.b3{width:300px;height:300px;background:#00d1c1;bottom:-120px;left:40%;animation-delay:-9s;opacity:.35}
-@keyframes float{50%{transform:translate(40px,-30px) scale(1.1)}}
-.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
-.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(28px,4vw,72px);align-items:center}
-.pill{display:inline-flex;gap:8px;align-items:center;padding:7px 16px;border-radius:99px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:13px;margin-bottom:22px}
-.pill b{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
-h1{font-size:clamp(38px,6vw,92px);line-height:1.04;margin:0 0 20px;letter-spacing:-2px}
-h1 em{font-style:normal;background:linear-gradient(120deg,#ff9a62,#a995ff 60%,#4ff0e3);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{color:#b9c4de;font-size:clamp(17px,1.4vw,22px);max-width:620px;margin:0 0 28px}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.stats{display:flex;gap:36px;margin-top:40px}.stats b{display:block;font:700 34px "Space Grotesk",sans-serif}.stats small{color:#93a0bd}
-.form{padding:26px;border-radius:24px;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.form h3{margin:0 0 4px;font-size:22px}.form p{margin:0 0 16px;color:#a9b5d1;font-size:14px}
-input,select,textarea{width:100%;padding:13px 15px;margin-bottom:10px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;font:inherit;outline:0}
-input:focus,select:focus,textarea:focus{border-color:var(--b)}
-input::placeholder,textarea::placeholder{color:#8794b3}select option{color:#000}
-.form .btn{width:100%;justify-content:center}
-.marq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0;background:var(--solid)}
-.track{display:flex;gap:48px;width:max-content;animation:m 28s linear infinite;color:var(--mute);font-weight:600}
-@keyframes m{to{transform:translateX(-50%)}}
-section{padding:90px 0}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-h2{font-size:clamp(28px,4vw,46px);line-height:1.1;margin:10px 0 12px;letter-spacing:-1.2px}
-.sub{color:var(--mute);max-width:680px;margin:0 0 40px}
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(190px,17vw,280px);gap:16px}
-.tile{position:relative;overflow:hidden;border-radius:24px;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;transition:.3s}
-.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,0%),rgba(124,92,255,.25),transparent 70%);opacity:0;transition:.3s}
-.tile:hover{transform:translateY(-4px);border-color:var(--b)}.tile:hover::before{opacity:1}
-.tile .ico{position:absolute;top:20px;right:22px;font-size:46px;opacity:.95}
-.tile h3{margin:0;font-size:22px;position:relative}.tile p{margin:2px 0 0;color:var(--mute);font-size:14px;position:relative}
-.t1{grid-column:span 2;grid-row:span 2}.t4{grid-column:span 2}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.tab{padding:9px 20px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font:500 14px Inter,sans-serif;transition:.2s}
-.tab:hover{border-color:var(--b)}.tab.on{background:var(--grad);color:#fff;border-color:transparent}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.proj{border-radius:22px;padding:14px;transition:.3s}
-.proj:hover{transform:translateY(-6px);box-shadow:0 24px 50px -20px rgba(124,92,255,.5);border-color:var(--b)}
-.thumb{position:relative;overflow:hidden;height:170px;border-radius:14px;display:grid;place-items:center;font-size:54px;margin-bottom:16px;background:linear-gradient(135deg,#1b2550,#7c5cff 60%,#ff6a2b)}.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0b1220}.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 8px 0}.chips span{font-size:11px;padding:2px 9px;border-radius:99px;background:var(--line);color:var(--mute)}.lk{display:flex;gap:14px}
-.proj h3{margin:0 8px 6px;font-size:18px}.proj p{margin:0 8px;color:var(--mute);font-size:14px}
-.meta{display:flex;justify-content:space-between;align-items:center;margin:16px 8px 6px;font-size:13px}
-.tag{padding:3px 12px;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
-.meta a{font-weight:600;color:var(--a)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
-.step{border-radius:22px;padding:26px}.step::before{counter-increment:s;content:"0" counter(s);font:700 40px "Space Grotesk",sans-serif;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.step h3{margin:6px 0;font-size:19px}.step p{margin:0;color:var(--mute);font-size:14px}
-details{border-radius:16px;padding:18px 22px;margin-bottom:12px}summary{cursor:pointer;font-weight:600}details p{color:var(--mute);margin:10px 0 0}
-.cta{position:relative;overflow:hidden;border-radius:32px;text-align:center;padding:70px 22px;background:var(--grad);color:#fff}
-.cta h2{margin-top:0}.cta .btn{background:#0b1220;box-shadow:none;margin-top:18px}
-footer{border-top:1px solid var(--line);padding:56px 0 26px;font-size:14px;color:var(--mute)}
-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:32px}
-footer h4{color:var(--ink);margin:0 0 12px}footer a{display:block;margin:6px 0}footer a:hover{color:var(--ink)}footer .copy{margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
-.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;background:#25d366;color:#fff;font-weight:700;padding:14px 20px;border-radius:99px;box-shadow:0 12px 30px -6px rgba(37,211,102,.6)}
-.rv{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}.rv.in{opacity:1;transform:none}
-@media(max-width:900px){.hero .wrap,footer .cols{grid-template-columns:1fr}.bento{grid-template-columns:1fr 1fr}.t1{grid-column:span 2;grid-row:span 1}.steps{grid-template-columns:1fr 1fr}nav a:not(.btn){display:none}.hero{padding-top:110px;min-height:auto}}
-@media(max-width:520px){.steps{grid-template-columns:1fr}.stats{gap:22px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+:root{
+  --bg:#f6f7fb;
+  --card:rgba(255,255,255,.75);
+  --solid:#fff;
+  --ink:#0b1220;
+  --mute:#5d6882;
+  --line:rgba(15,23,42,.1);
+  --a:#ff6a2b;
+  --b:#7c5cff;
+  --c:#00d1c1;
+  --grad:linear-gradient(120deg,var(--a),var(--b));
+  --onA:#fff;
+}
+
+@media(prefers-color-scheme:dark){
+
+  :root:not([data-theme="light"]){
+    --bg:#070b16;
+    --card:rgba(255,255,255,.05);
+    --solid:#101730;
+    --ink:#f1f4fb;
+    --mute:#97a3bf;
+    --line:rgba(255,255,255,.1);
+  }
+
+}
+
+:root[data-theme="dark"]{
+  --bg:#070b16;
+  --card:rgba(255,255,255,.05);
+  --solid:#101730;
+  --ink:#f1f4fb;
+  --mute:#97a3bf;
+  --line:rgba(255,255,255,.1);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+  width:100%;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+h1,
+h2,
+h3,
+.logo{
+  font-family:"Space Grotesk",Inter,system-ui,sans-serif;
+}
+
+.wrap{
+  width:100%;
+  max-width:none;
+  margin:auto;
+  padding:0 clamp(18px,5vw,96px);
+}
+
+.glass{
+  background:var(--card);
+  border:1px solid var(--line);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+  position:fixed;
+  left:0;
+  right:0;
+  top:calc(12px + env(safe-area-inset-top,0px));
+  z-index:100;
+  padding:0 clamp(10px,3vw,48px);
+}
+
+.nav{
+  width:100%;
+  height:62px;
+  border-radius:99px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px 0 18px;
+  box-shadow:0 12px 40px rgba(15,23,42,.08);
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+}
+
+.logo.brand-lockup{
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  letter-spacing:-.6px;
+  white-space:nowrap;
+}
+
+.sv-mark{
+  width:44px;
+  height:44px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(
+    135deg,
+    #ff6a2b,
+    #7c5cff 58%,
+    #00d1c1
+  );
+  color:#fff;
+  font:700 17px/1 "Space Grotesk",sans-serif;
+  letter-spacing:-1px;
+  box-shadow:
+    0 0 0 3px rgba(124,92,255,.14),
+    0 8px 24px rgba(124,92,255,.32);
+  position:relative;
+  flex:0 0 auto;
+  transition:transform .3s ease;
+}
+
+.sv-mark::after{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border:1px solid rgba(124,92,255,.32);
+  border-radius:18px;
+  pointer-events:none;
+}
+
+.brand-lockup:hover .sv-mark{
+  transform:rotate(-6deg) scale(1.05);
+}
+
+.brand-words{
+  display:inline-flex;
+  align-items:baseline;
+  gap:5px;
+  color:var(--ink);
+}
+
+.brand-words i{
+  font-style:normal;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-link,
+.nav-trigger{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 13px;
+  border:0;
+  border-radius:99px;
+  background:transparent;
+  color:var(--mute);
+  font-size:14px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.nav-link:hover,
+.nav-trigger:hover,
+.nav-item.active>.nav-trigger{
+  color:var(--ink);
+  background:var(--line);
+}
+
+.nav-trigger .arrow{
+  font-size:10px;
+  transition:transform .3s ease;
+}
+
+.nav-item.open .arrow{
+  transform:rotate(180deg);
+}
+
+.dropdown{
+  position:absolute;
+  top:calc(100% + 12px);
+  left:50%;
+  min-width:245px;
+  padding:9px;
+  transform:translate(-50%,8px) scale(.96);
+  transform-origin:top center;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:color-mix(in srgb,var(--solid) 88%,transparent);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  box-shadow:0 24px 60px rgba(15,23,42,.18);
+  transition:
+    opacity .22s ease,
+    transform .28s cubic-bezier(.2,.8,.2,1),
+    visibility .22s;
+}
+
+.dropdown::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:50%;
+  width:12px;
+  height:12px;
+  transform:translateX(-50%) rotate(45deg);
+  background:var(--solid);
+  border-left:1px solid var(--line);
+  border-top:1px solid var(--line);
+}
+
+.nav-item:hover>.dropdown,
+.nav-item.open>.dropdown{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%,0) scale(1);
+}
+
+.dropdown a{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:11px 12px;
+  border-radius:13px;
+  color:var(--mute);
+  font-size:13px;
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.dropdown a:hover{
+  background:var(--line);
+  color:var(--ink);
+  transform:translateX(4px);
+}
+
+.dropdown .drop-icon{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,106,43,.14),
+      rgba(124,92,255,.16)
+    );
+  font-size:16px;
+}
+
+.dropdown .drop-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+
+.dropdown .drop-text small{
+  font-size:10px;
+  color:var(--mute);
+  margin-top:3px;
+}
+
+.nav .btn{
+  padding:9px 20px;
+  color:#fff!important;
+}
+
+.menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:var(--card);
+  color:var(--ink);
+  cursor:pointer;
+  position:relative;
+}
+
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:2px;
+  left:12px;
+  background:currentColor;
+  border-radius:2px;
+  transition:.3s;
+}
+
+.menu-toggle span{
+  top:20px;
+}
+
+.menu-toggle span::before{
+  left:0;
+  top:-6px;
+}
+
+.menu-toggle span::after{
+  left:0;
+  top:6px;
+}
+
+.menu-toggle.open span{
+  background:transparent;
+}
+
+.menu-toggle.open span::before{
+  top:0;
+  transform:rotate(45deg);
+}
+
+.menu-toggle.open span::after{
+  top:0;
+  transform:rotate(-45deg);
+}
+
+.mobile-nav{
+  display:none;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--grad);
+  color:var(--onA)!important;
+  font-weight:600;
+  padding:13px 26px;
+  border-radius:99px;
+  border:0;
+  cursor:pointer;
+  box-shadow:0 10px 30px -8px rgba(255,106,43,.6);
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px -8px rgba(124,92,255,.65);
+}
+
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.25);
+  box-shadow:none;
+  color:#fff!important;
+}
+
+.btn.ghost:hover{
+  background:rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  position:relative;
+  color:#fff;
+  background:#070b16;
+  padding:130px 0 70px;
+  overflow:hidden;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+}
+
+.hero>.wrap{
+  width:100%;
+}
+
+.hero .wrap{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:clamp(28px,4vw,72px);
+  align-items:center;
+}
+
+.blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:.55;
+  animation:float 14s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.b1{
+  width:420px;
+  height:420px;
+  background:#ff6a2b;
+  top:-120px;
+  left:-80px;
+}
+
+.b2{
+  width:480px;
+  height:480px;
+  background:#7c5cff;
+  right:-120px;
+  top:40px;
+  animation-delay:-5s;
+}
+
+.b3{
+  width:300px;
+  height:300px;
+  background:#00d1c1;
+  bottom:-120px;
+  left:40%;
+  animation-delay:-9s;
+  opacity:.35;
+}
+
+@keyframes float{
+
+  50%{
+    transform:translate(40px,-30px) scale(1.1);
+  }
+
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+    );
+  background-size:48px 48px;
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      #000 30%,
+      transparent 75%
+    );
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      #000 30%,
+      transparent 75%
+    );
+  pointer-events:none;
+}
+
+.pill{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:7px 16px;
+  border-radius:99px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.pill b{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--c);
+  box-shadow:0 0 12px var(--c);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+  50%{
+    box-shadow:0 0 0 8px rgba(0,209,193,0);
+  }
+
+}
+
+h1{
+  font-size:clamp(38px,6vw,92px);
+  line-height:1.04;
+  margin:0 0 20px;
+  letter-spacing:-2px;
+}
+
+h1 em{
+  font-style:normal;
+  background:
+    linear-gradient(
+      120deg,
+      #ff9a62,
+      #a995ff 60%,
+      #4ff0e3
+    );
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p.lead{
+  color:#b9c4de;
+  font-size:clamp(17px,1.4vw,22px);
+  max-width:620px;
+  margin:0 0 28px;
+}
+
+.cta-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.stats{
+  display:flex;
+  gap:36px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.stats b{
+  display:block;
+  font:700 34px "Space Grotesk",sans-serif;
+}
+
+.stats small{
+  color:#93a0bd;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form{
+  padding:26px;
+  border-radius:24px;
+  color:#fff;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  animation:formFloat 5s ease-in-out infinite;
+}
+
+@keyframes formFloat{
+
+  50%{
+    transform:translateY(-5px);
+  }
+
+}
+
+.form h3{
+  margin:0 0 4px;
+  font-size:22px;
+}
+
+.form p{
+  margin:0 0 16px;
+  color:#a9b5d1;
+  font-size:14px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:13px 15px;
+  margin-bottom:10px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  outline:0;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--b);
+  box-shadow:0 0 0 3px rgba(124,92,255,.12);
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#8794b3;
+}
+
+select option{
+  color:#000;
+}
+
+.form .btn{
+  width:100%;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marq{
+  overflow:hidden;
+  border-block:1px solid var(--line);
+  padding:16px 0;
+  background:var(--solid);
+}
+
+.track{
+  display:flex;
+  gap:48px;
+  width:max-content;
+  animation:marquee 28s linear infinite;
+  color:var(--mute);
+  font-weight:600;
+}
+
+.track span{
+  white-space:nowrap;
+}
+
+@keyframes marquee{
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+  padding:90px 0;
+}
+
+.eyebrow{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+h2{
+  font-size:clamp(28px,4vw,46px);
+  line-height:1.1;
+  margin:10px 0 12px;
+  letter-spacing:-1.2px;
+}
+
+.sub{
+  color:var(--mute);
+  max-width:680px;
+  margin:0 0 40px;
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.bento{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:clamp(190px,17vw,280px);
+  gap:16px;
+}
+
+.tile{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  transition:.35s;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  color:#fff;
+  isolation:isolate;
+}
+
+.tile::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,10,25,.08),
+      rgba(5,10,25,.92)
+    ),
+    radial-gradient(
+      260px circle at var(--x,50%) var(--y,0%),
+      rgba(124,92,255,.28),
+      transparent 70%
+    );
+  z-index:-1;
+  transition:.3s;
+}
+
+.tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(7,11,22,.12);
+  z-index:-2;
+}
+
+.tile h3,
+.tile p{
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.45);
+}
+
+.tile:hover{
+  transform:translateY(-7px) scale(1.015);
+  border-color:var(--b);
+  box-shadow:0 24px 55px rgba(124,92,255,.18);
+}
+
+.tile .ico{
+  position:absolute;
+  top:20px;
+  right:22px;
+  font-size:46px;
+  opacity:.95;
+  transition:.35s;
+}
+
+.tile:hover .ico{
+  transform:translateY(-5px) rotate(4deg) scale(1.08);
+}
+
+.tile h3{
+  margin:0;
+  font-size:22px;
+  position:relative;
+}
+
+.tile p{
+  margin:2px 0 0;
+  color:#d9e0f2;
+  font-size:14px;
+  position:relative;
+}
+
+.t1{
+  grid-column:span 2;
+  grid-row:span 2;
+}
+
+.t4{
+  grid-column:span 2;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+.tab{
+  padding:9px 20px;
+  border-radius:99px;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--ink);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.tab:hover{
+  border-color:var(--b);
+  transform:translateY(-2px);
+}
+
+.tab.on{
+  background:var(--grad);
+  color:#fff;
+  border-color:transparent;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;
+}
+
+.proj{
+  border-radius:22px;
+  padding:14px;
+  transition:.35s;
+  overflow:hidden;
+}
+
+.proj:hover{
+  transform:translateY(-7px);
+  box-shadow:
+    0 24px 50px -20px rgba(124,92,255,.5);
+  border-color:var(--b);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.thumb{
+  position:relative;
+  overflow:hidden;
+  height:170px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-size:54px;
+  margin-bottom:16px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(124,92,255,.45),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255,106,43,.4),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #111a3c,
+      #251c5c
+    );
+}
+
+.thumb>span{
+  position:relative;
+  z-index:1;
+  transition:.25s;
+}
+
+.proj:hover .thumb>span{
+  transform:scale(1.1);
+}
+
+.thumb img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:#0b1220;
+  z-index:2;
+  transition:.5s;
+}
+
+.thumb img:hover{
+  transform:scale(1.06);
+}
+
+.thumb.image-failed img{
+  display:none;
+}
+
+.thumb.image-loaded>span{
+  display:none;
+}
+
+.thumb.image-failed{
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      rgba(124,92,255,.65),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255,106,43,.55),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #111a3c,
+      #251c5c
+    );
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:12px 8px 0;
+}
+
+.chips span{
+  font-size:11px;
+  padding:2px 9px;
+  border-radius:99px;
+  background:var(--line);
+  color:var(--mute);
+  transition:.2s;
+}
+
+.chips span:hover{
+  transform:translateY(-2px);
+}
+
+.proj h3{
+  margin:0 8px 6px;
+  font-size:18px;
+}
+
+.proj p{
+  margin:0 8px;
+  color:var(--mute);
+  font-size:14px;
+}
+
+.meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin:16px 8px 6px;
+  font-size:13px;
+}
+
+.tag{
+  padding:3px 12px;
+  border-radius:99px;
+  border:1px solid var(--line);
+  color:var(--mute);
+}
+
+.meta a{
+  font-weight:600;
+  color:var(--a);
+}
+
+.lk{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+
+/* =========================================================
+   PROCESS / FAQ / CTA / FOOTER
+========================================================= */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  counter-reset:s;
+}
+
+.step{
+  border-radius:22px;
+  padding:26px;
+  transition:.3s;
+}
+
+.step:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(124,92,255,.12);
+}
+
+.step::before{
+  counter-increment:s;
+  content:"0" counter(s);
+  font:700 40px "Space Grotesk",sans-serif;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.step h3{
+  margin:6px 0;
+  font-size:19px;
+}
+
+.step p{
+  margin:0;
+  color:var(--mute);
+  font-size:14px;
+}
+
+details{
+  border-radius:16px;
+  padding:18px 22px;
+  margin-bottom:12px;
+  transition:.3s;
+}
+
+details:hover{
+  transform:translateX(4px);
+}
+
+summary{
+  cursor:pointer;
+  font-weight:600;
+}
+
+details p{
+  color:var(--mute);
+  margin:10px 0 0;
+}
+
+.cta{
+  position:relative;
+  overflow:hidden;
+  border-radius:32px;
+  text-align:center;
+  padding:70px 22px;
+  background:var(--grad);
+  color:#fff;
+}
+
+.cta::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  right:-80px;
+  top:-120px;
+  background:rgba(255,255,255,.13);
+  animation:ctaOrb 8s ease-in-out infinite;
+}
+
+.cta>*{
+  position:relative;
+  z-index:1;
+}
+
+@keyframes ctaOrb{
+
+  50%{
+    transform:translate(-35px,35px) scale(1.15);
+  }
+
+}
+
+.cta h2{
+  margin-top:0;
+}
+
+.cta .btn{
+  background:#0b1220;
+  box-shadow:none;
+  margin-top:18px;
+}
+
+.cta .btn:hover{
+  background:#111a30;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:56px 0 26px;
+  font-size:14px;
+  color:var(--mute);
+}
+
+footer .cols{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.4fr;
+  gap:32px;
+}
+
+footer h4{
+  color:var(--ink);
+  margin:0 0 12px;
+}
+
+footer a{
+  display:block;
+  margin:6px 0;
+  transition:.2s;
+}
+
+footer a:hover{
+  color:var(--ink);
+  transform:translateX(3px);
+}
+
+footer .copy{
+  margin-top:30px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.wa{
+  position:fixed;
+  right:18px;
+  bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  z-index:40;
+  background:#25d366;
+  color:#fff;
+  font-weight:700;
+  padding:14px 20px;
+  border-radius:99px;
+  box-shadow:0 12px 30px -6px rgba(37,211,102,.6);
+  transition:.25s;
+  animation:waPulse 2.6s infinite;
+}
+
+.wa:hover{
+  transform:translateY(-3px);
+}
+
+@keyframes waPulse{
+
+  50%{
+    box-shadow:
+      0 12px 35px -4px rgba(37,211,102,.75),
+      0 0 0 8px rgba(37,211,102,.08);
+  }
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.rv{
+  opacity:0;
+  transform:translateY(24px);
+  transition:.7s cubic-bezier(.2,.7,.2,1);
+}
+
+.rv.in{
+  opacity:1;
+  transform:none;
+}
+
+.tile.rv:nth-child(2),
+.proj.rv:nth-child(2),
+.step.rv:nth-child(2){
+  transition-delay:.08s;
+}
+
+.tile.rv:nth-child(3),
+.proj.rv:nth-child(3),
+.step.rv:nth-child(3){
+  transition-delay:.16s;
+}
+
+.tile.rv:nth-child(4),
+.proj.rv:nth-child(4),
+.step.rv:nth-child(4){
+  transition-delay:.24s;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+  .hero .wrap{
+    grid-template-columns:1fr;
+  }
+
+  .hero .form{
+    max-width:620px;
+  }
+
+  footer .cols{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .bento{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .t1{
+    grid-column:span 2;
+    grid-row:span 1;
+  }
+
+  .t4{
+    grid-column:span 2;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .mobile-nav{
+    position:absolute;
+    top:calc(100% + 10px);
+    left:0;
+    right:0;
+    padding:10px;
+    border-radius:22px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px) scale(.98);
+    transition:.25s;
+    box-shadow:0 24px 60px rgba(15,23,42,.18);
+  }
+
+  .mobile-nav.open{
+    opacity:1;
+    visibility:visible;
+    transform:none;
+  }
+
+  .mobile-nav>a,
+  .mobile-nav .mobile-trigger{
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:space-between;
+    padding:13px 14px;
+    border:0;
+    border-radius:13px;
+    background:transparent;
+    color:var(--ink);
+    cursor:pointer;
+  }
+
+  .mobile-nav>a:hover,
+  .mobile-nav .mobile-trigger:hover{
+    background:var(--line);
+  }
+
+  .mobile-sub{
+    display:grid;
+    grid-template-rows:0fr;
+    overflow:hidden;
+    transition:grid-template-rows .3s ease;
+  }
+
+  .mobile-sub>div{
+    min-height:0;
+    display:grid;
+    padding-left:10px;
+  }
+
+  .mobile-sub.open{
+    grid-template-rows:1fr;
+  }
+
+  .mobile-sub a{
+    padding:9px 14px;
+    color:var(--mute);
+    font-size:13px;
+  }
+
+  .mobile-trigger .arrow{
+    transition:.25s;
+  }
+
+  .mobile-trigger.open .arrow{
+    transform:rotate(180deg);
+  }
+
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:0 10px;
+  }
+
+  .nav{
+    padding:0 10px 0 12px;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .sv-mark{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+  }
+
+  .hero{
+    padding:115px 0 55px;
+  }
+
+  .hero h1{
+    font-size:clamp(42px,13vw,64px);
+  }
+
+  .hero p.lead{
+    font-size:16px;
+  }
+
+  .stats{
+    gap:18px;
+    margin-top:30px;
+  }
+
+  .stats b{
+    font-size:27px;
+  }
+
+  .form{
+    padding:20px;
+  }
+
+  section{
+    padding:70px 0;
+  }
+
+  .bento{
+    grid-template-columns:1fr;
+    grid-auto-rows:220px;
+  }
+
+  .t1,
+  .t4{
+    grid-column:span 1;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  footer .cols{
+    grid-template-columns:1fr;
+  }
+
+  .wa{
+    right:14px;
+    bottom:14px;
+    padding:12px 17px;
+    font-size:14px;
+  }
+
+  .logo.brand-lockup{
+    gap:9px;
+  }
+
+  .cta{
+    padding:55px 18px;
+    border-radius:26px;
+  }
+
+  .meta{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  .rv{
+    opacity:1;
+    transform:none;
+  }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
-<header><div class="nav glass">
-<a class="logo" href="#top">Your<i>Brand</i></a>
-<nav><a href="#categories">Categories</a><a href="#projects">Projects</a><a href="#process">Process</a><a href="#faq">FAQ</a><a class="btn" href="#enquire">Get a Quote</a></nav>
-</div></header>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <div class="nav glass">
+
+    <a
+      class="logo brand-lockup"
+      href="#top"
+      aria-label="SV Tech Solutions home"
+    >
+
+      <!-- <span class="sv-mark">SV</span> -->
+
+      <span class="brand-words">
+        SV <i>Tech Solutions</i>
+      </span>
+
+    </a>
+
+
+    <nav aria-label="Primary navigation">
+
+      <div class="nav-item">
+
+        <button
+          class="nav-trigger"
+          type="button"
+          aria-expanded="false"
+        >
+          Categories
+          <span class="arrow">▼</span>
+        </button>
+
+        <div class="dropdown" role="menu">
+
+          <a
+            href="#projects"
+            onclick="setCat('Robotics')"
+          >
+            <span class="drop-icon">🤖</span>
+            <span class="drop-text">
+              Robotics
+              <small>Arms, robots & automation</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('IoT & ESP32')"
+          >
+            <span class="drop-icon">📡</span>
+            <span class="drop-text">
+              IoT & ESP32
+              <small>Wireless & smart devices</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Arduino')"
+          >
+            <span class="drop-icon">⚡</span>
+            <span class="drop-text">
+              Arduino
+              <small>Sensors & mini builds</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Software & Web')"
+          >
+            <span class="drop-icon">💻</span>
+            <span class="drop-text">
+              Software & Web
+              <small>Apps & digital tools</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('AI & Vision')"
+          >
+            <span class="drop-icon">🧠</span>
+            <span class="drop-text">
+              AI & Vision
+              <small>ML & computer vision</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Hardware & PCB')"
+          >
+            <span class="drop-icon">🔧</span>
+            <span class="drop-text">
+              Hardware & PCB
+              <small>Boards & circuits</small>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="nav-item">
+
+        <button
+          class="nav-trigger"
+          type="button"
+          aria-expanded="false"
+        >
+          Projects
+          <span class="arrow">▼</span>
+        </button>
+
+        <div class="dropdown" role="menu">
+
+          <a
+            href="#projects"
+            onclick="setCat('All')"
+          >
+            <span class="drop-icon">✦</span>
+            <span class="drop-text">
+              All Projects
+              <small>View complete portfolio</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Robotics')"
+          >
+            <span class="drop-icon">🦾</span>
+            <span class="drop-text">
+              Robotics
+              <small>Robotic builds</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Arduino')"
+          >
+            <span class="drop-icon">⚙️</span>
+            <span class="drop-text">
+              Arduino
+              <small>Embedded projects</small>
+            </span>
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('IoT & ESP32')"
+          >
+            <span class="drop-icon">📶</span>
+            <span class="drop-text">
+              IoT & ESP32
+              <small>Connected systems</small>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a
+        class="nav-link"
+        href="#process"
+      >
+        Process
+      </a>
+
+      <a
+        class="nav-link"
+        href="#faq"
+      >
+        FAQ
+      </a>
+
+      <a
+        class="nav-link"
+        href="#contact"
+      >
+        Contact
+      </a>
+
+      <a
+        class="btn"
+        href="#enquire"
+      >
+        Get a Quote
+      </a>
+
+    </nav>
+
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+    </button>
+
+
+    <!-- MOBILE NAV -->
+
+    <div
+      class="mobile-nav glass"
+      id="mobileNav"
+    >
+
+      <div
+        class="mobile-trigger"
+        data-mobile="categories"
+      >
+        Categories
+        <span class="arrow">▼</span>
+      </div>
+
+      <div
+        class="mobile-sub"
+        id="mobileCategories"
+      >
+
+        <div>
+
+          <a
+            href="#projects"
+            onclick="setCat('Robotics')"
+          >
+            🤖 Robotics
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('IoT & ESP32')"
+          >
+            📡 IoT & ESP32
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Arduino')"
+          >
+            ⚡ Arduino
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Software & Web')"
+          >
+            💻 Software & Web
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('AI & Vision')"
+          >
+            🧠 AI & Vision
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Hardware & PCB')"
+          >
+            🔧 Hardware & PCB
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="mobile-trigger"
+        data-mobile="projects"
+      >
+        Projects
+        <span class="arrow">▼</span>
+      </div>
+
+      <div
+        class="mobile-sub"
+        id="mobileProjects"
+      >
+
+        <div>
+
+          <a
+            href="#projects"
+            onclick="setCat('All')"
+          >
+            ✦ All Projects
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Robotics')"
+          >
+            🦾 Robotics
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('Arduino')"
+          >
+            ⚙️ Arduino
+          </a>
+
+          <a
+            href="#projects"
+            onclick="setCat('IoT & ESP32')"
+          >
+            📶 IoT & ESP32
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a href="#process">
+        Process
+      </a>
+
+      <a href="#faq">
+        FAQ
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+      <a
+        class="btn"
+        href="#enquire"
+      >
+        Get a Quote →
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
 <main id="top">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <div class="hero">
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-<div class="wrap">
-<div>
-<span class="pill"><b></b>Engineering projects &amp; science models</span>
-<h1>Turn your idea into a <em>working model.</em></h1>
-<p class="lead">Final year projects, Arduino &amp; IoT builds, robotics and science fair models, delivered with complete documentation and expert guidance.</p>
-<div class="cta-row"><a class="btn" href="#projects">Browse Projects →</a><a class="btn ghost" href="#enquire">Free Consultation</a></div>
-<div class="stats"><div><b>1000+</b><small>Projects supported</small></div><div><b>10+</b><small>Years experience</small></div><div><b>24h</b><small>Fast response</small></div></div>
+
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+
+  <div class="wrap">
+
+    <div>
+
+      <span class="pill">
+        <b></b>
+        Engineering projects &amp; science models
+      </span>
+
+
+      <!-- <h1>
+        SV <em>Tech Solutions.</em>
+      </h1> -->
+
+
+      <h1>
+        Turn your idea into a
+        <em>working model.</em>
+      </h1>
+
+
+      <p class="lead">
+        Final year projects, Arduino &amp; IoT builds,
+        robotics and science fair models, delivered
+        with complete documentation and expert guidance.
+      </p>
+
+
+      <div class="cta-row">
+
+        <a
+          class="btn"
+          href="#projects"
+        >
+          Browse Projects →
+        </a>
+
+        <a
+          class="btn ghost"
+          href="#enquire"
+        >
+          Free Consultation
+        </a>
+
+      </div>
+
+
+      <div class="stats">
+
+        <div>
+          <b>1000+</b>
+          <small>Projects supported</small>
+        </div>
+
+        <div>
+          <b>10+</b>
+          <small>Years experience</small>
+        </div>
+
+        <div>
+          <b>24h</b>
+          <small>Fast response</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ENQUIRY FORM -->
+
+    <form
+      class="form"
+      id="enquire"
+      onsubmit="return send(event)"
+    >
+
+      <h3>Need expert help?</h3>
+
+      <p>
+        Tell us what you need. We’ll reply on WhatsApp.
+      </p>
+
+      <input
+        id="nameInput"
+        type="text"
+        placeholder="Your name"
+        autocomplete="name"
+        required
+      >
+
+      <input
+        id="phoneInput"
+        type="tel"
+        placeholder="Phone / WhatsApp"
+        autocomplete="tel"
+        required
+      >
+
+      <select id="typeInput">
+
+        <option>
+          Project consultation
+        </option>
+
+        <option>
+          Final year engineering project
+        </option>
+
+        <option>
+          Science fair model
+        </option>
+
+        <option>
+          Industrial project development
+        </option>
+
+        <option>
+          Project report / documentation
+        </option>
+
+        <option>
+          Custom requirement
+        </option>
+
+      </select>
+
+      <textarea
+        id="messageInput"
+        rows="3"
+        placeholder="Describe your idea (optional)"
+      ></textarea>
+
+      <button
+        class="btn"
+        type="submit"
+      >
+        Request Guidance →
+      </button>
+
+    </form>
+
+  </div>
+
 </div>
-<form class="form" id="enquire" onsubmit="return send(event)">
-<h3>Need expert help?</h3><p>Tell us what you need. We’ll reply on WhatsApp.</p>
-<input id="n" placeholder="Your name" required>
-<input id="p" placeholder="Phone / WhatsApp" required>
-<select id="t"><option>Project consultation</option><option>Final year engineering project</option><option>Science fair model</option><option>Industrial project development</option><option>Project report / documentation</option><option>Custom requirement</option></select>
-<textarea id="m" rows="3" placeholder="Describe your idea (optional)"></textarea>
-<button class="btn" type="submit">Request Guidance →</button>
-</form>
-</div></div>
 
-<div class="marq"><div class="track" id="track"></div></div>
 
-<section id="categories"><div class="wrap">
-<span class="eyebrow rv">Categories</span><h2 class="rv">Explore by technology</h2>
-<p class="sub rv">Find projects by domain, from school models to industrial prototypes.</p>
-<div class="bento" id="cats"></div>
-</div></section>
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
 
-<section id="projects"><div class="wrap">
-<span class="eyebrow rv">Latest work</span><h2 class="rv">Project solutions</h2>
-<p class="sub rv">Working models and prototypes with documentation support.</p>
-<div class="tabs" id="tabs"></div>
-<div class="grid" id="plist"></div>
-</div></section>
+<div class="marq">
 
-<section id="process"><div class="wrap">
-<span class="eyebrow rv">Process</span><h2 class="rv">From idea to demo in 4 steps</h2><p class="sub rv">Simple and transparent.</p>
-<div class="steps">
-<div class="step glass rv"><h3>Share your idea</h3><p>Tell us topic, level and deadline on WhatsApp.</p></div>
-<div class="step glass rv"><h3>Plan &amp; quote</h3><p>We suggest components, design and a clear price.</p></div>
-<div class="step glass rv"><h3>Build &amp; test</h3><p>Your model is built, tested and demonstrated.</p></div>
-<div class="step glass rv"><h3>Docs &amp; support</h3><p>Report, diagrams, code and viva guidance.</p></div>
-</div></div></section>
+  <div
+    class="track"
+    id="track"
+  ></div>
 
-<section id="faq"><div class="wrap">
-<span class="eyebrow rv">FAQ</span><h2 class="rv">Common questions</h2><br>
-<details class="glass rv"><summary>Do you provide project documentation?</summary><p>Yes. Reports, block diagrams, circuit diagrams and code explanation are included.</p></details>
-<details class="glass rv"><summary>Can you build my own custom idea?</summary><p>Yes. Share your requirement and we will design, build and test it.</p></details>
-<details class="glass rv"><summary>How fast will I get a reply?</summary><p>Most WhatsApp enquiries get a reply the same day.</p></details>
-<details class="glass rv"><summary>Do you support school science fairs?</summary><p>Yes, from class 6 to 12, including physics, solar and energy models.</p></details>
-</div></section>
+</div>
 
-<section style="padding-top:0"><div class="wrap"><div class="cta rv">
-<h2>Need help choosing a project?</h2><p>Chat with an expert on WhatsApp and get guidance in minutes.</p>
-<a class="btn" id="cta" href="#">Chat with Expert →</a>
-</div></div></section>
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section id="categories">
+
+  <div class="wrap">
+
+    <span class="eyebrow rv">
+      Categories
+    </span>
+
+    <h2 class="rv">
+      Explore by technology
+    </h2>
+
+    <p class="sub rv">
+      Find projects by domain, from school models
+      to industrial prototypes.
+    </p>
+
+    <div
+      class="bento"
+      id="cats"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+  <div class="wrap">
+
+    <span class="eyebrow rv">
+      Latest work
+    </span>
+
+    <h2 class="rv">
+      Project solutions
+    </h2>
+
+    <p class="sub rv">
+      Working models and prototypes with documentation support.
+    </p>
+
+    <div
+      class="tabs"
+      id="tabs"
+    ></div>
+
+    <div
+      class="grid"
+      id="plist"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section id="process">
+
+  <div class="wrap">
+
+    <span class="eyebrow rv">
+      Process
+    </span>
+
+    <h2 class="rv">
+      From idea to demo in 4 steps
+    </h2>
+
+    <p class="sub rv">
+      Simple and transparent.
+    </p>
+
+
+    <div class="steps">
+
+      <div class="step glass rv">
+
+        <h3>
+          Share your idea
+        </h3>
+
+        <p>
+          Tell us topic, level and deadline on WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div class="step glass rv">
+
+        <h3>
+          Plan &amp; quote
+        </h3>
+
+        <p>
+          We suggest components, design and a clear price.
+        </p>
+
+      </div>
+
+
+      <div class="step glass rv">
+
+        <h3>
+          Build &amp; test
+        </h3>
+
+        <p>
+          Your model is built, tested and demonstrated.
+        </p>
+
+      </div>
+
+
+      <div class="step glass rv">
+
+        <h3>
+          Docs &amp; support
+        </h3>
+
+        <p>
+          Report, diagrams, code and viva guidance.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section id="faq">
+
+  <div class="wrap">
+
+    <span class="eyebrow rv">
+      FAQ
+    </span>
+
+    <h2 class="rv">
+      Common questions
+    </h2>
+
+    <br>
+
+
+    <details class="glass rv">
+
+      <summary>
+        Do you provide project documentation?
+      </summary>
+
+      <p>
+        Yes. Reports, block diagrams, circuit diagrams
+        and code explanation are included.
+      </p>
+
+    </details>
+
+
+    <details class="glass rv">
+
+      <summary>
+        Can you build my own custom idea?
+      </summary>
+
+      <p>
+        Yes. Share your requirement and we will design,
+        build and test it.
+      </p>
+
+    </details>
+
+
+    <details class="glass rv">
+
+      <summary>
+        How fast will I get a reply?
+      </summary>
+
+      <p>
+        Most WhatsApp enquiries get a reply the same day.
+      </p>
+
+    </details>
+
+
+    <details class="glass rv">
+
+      <summary>
+        Do you support school science fairs?
+      </summary>
+
+      <p>
+        Yes, from class 6 to 12, including physics,
+        solar and energy models.
+      </p>
+
+    </details>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section style="padding-top:0">
+
+  <div class="wrap">
+
+    <div class="cta rv">
+
+      <h2>
+        Need help choosing a project?
+      </h2>
+
+      <p>
+        Chat with an expert on WhatsApp and get guidance in minutes.
+      </p>
+
+      <a
+        class="btn"
+        id="cta"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        Chat with Expert →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 </main>
 
-<footer><div class="wrap"><div class="cols">
-<div><h4 class="logo" style="font-size:20px">Your<i>Brand</i></h4>Engineering projects, science fair models and expert technical guidance for students and innovators.</div>
-<div><h4>Links</h4><a href="#projects">Projects</a><a href="#process">Process</a><a href="#faq">FAQ</a></div>
-<div><h4>Categories</h4><a href="#projects">Arduino</a><a href="#projects">Mechanical</a><a href="#projects">Solar</a></div>
-<div><h4>Contact</h4>+91 XXXXX XXXXX<br>youremail@example.com<br>Your address, City, PIN</div>
-</div><div class="copy">© 2026 YourBrand. All rights reserved.</div></div></footer>
-<a class="wa" id="wa" href="#">💬 WhatsApp</a>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer id="contact">
+
+  <div class="wrap">
+
+    <div class="cols">
+
+
+      <div>
+
+        <a
+          class="logo brand-lockup"
+          href="#top"
+        >
+
+          <span class="sv-mark">
+            SV
+          </span>
+
+          <span class="brand-words">
+            SV <i>Tech Solutions</i>
+          </span>
+
+        </a>
+
+        <p>
+          Engineering projects, science fair models
+          and expert technical guidance for students
+          and innovators.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Links
+        </h4>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#process">
+          Process
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Categories
+        </h4>
+
+        <a
+          href="#projects"
+          onclick="setCat('Arduino')"
+        >
+          Arduino
+        </a>
+
+        <a
+          href="#projects"
+          onclick="setCat('Robotics')"
+        >
+          Robotics
+        </a>
+
+        <a
+          href="#projects"
+          onclick="setCat('IoT & ESP32')"
+        >
+          IoT &amp; ESP32
+        </a>
+
+        <a
+          href="#projects"
+          onclick="setCat('Software & Web')"
+        >
+          Software
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Contact
+        </h4>
+
+        <a href="tel:+919963761162">
+          +91 9963761162
+        </a>
+
+        <a href="mailto:shivavelishoju180@gmail.com">
+          shivavelishoju180@gmail.com
+        </a>
+
+        <span>
+          Hyderabad, Telangana, India
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="copy">
+      © 2026 SV Tech Solutions. All rights reserved.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+  class="wa"
+  id="wa"
+  href="#"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat on WhatsApp"
+>
+  💬 WhatsApp
+</a>
+
 
 <script>
-var WA="91XXXXXXXXXX"; // replace with your WhatsApp number (country code + number, no + or spaces)
-var CATS=[["🤖","Robotics","Arms, mecanum and delivery robots"],["📡","IoT & ESP32","Wireless, GPS and smart devices"],["🔌","Arduino","Sensors, automation and mini builds"],["💻","Software & Web","IDEs, web apps and tools"],["🧠","AI & Vision","Local AI, OpenCV and assistants"],["🔧","Hardware & PCB","Custom boards and electronics"]];
-var P=[
-["Software & Web","💻","VELINO IDE","Custom Arduino IDE built with Electron.js: Monaco editor, Arduino CLI, serial monitor and plotter, compile and upload.","https://i.postimg.cc/qv6pHgjq/velino-ide.png","https://velino-ide-lruk.vercel.app/",["Electron","Node.js","Arduino CLI","Monaco"]],
-["AI & Vision","🧠","Velino Smart AI","Local AI assistant inside the Velino IDE for coding help and debugging, running open-source models with no paid cloud API.","https://portfolio-web-sigma-inky.vercel.app/Velino%20smart%20ai%20icon.png","https://velino-smart-ai.vercel.app/",["Ollama","Local LLM","Electron","Node.js"]],
-["Robotics","🦾","DUM-E 6-Axis Robotic Arm","Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.","https://i.postimg.cc/xjRV0Jvn/IMG-2819-Original.jpg","",["Arduino","Servo Motors","Robotics"]],
-["Software & Web","🧮","VADDI Calculator Pro","Financial web app for simple interest, compound interest, EMI and loans, with PDF reports, offline PWA and multiple languages.","https://portfolio-web-sigma-inky.vercel.app/VADDI%20APP.png","https://vaddi-calculator-pro.vercel.app/",["HTML","CSS","JavaScript","PWA"]],
-["Robotics","🤝","Master Slave Robotic Arm","Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.","https://portfolio-web-sigma-inky.vercel.app/MSRA.png","",["Arduino","Flex Sensors","Servo Motors"]],
-["Robotics","🛞","Velino Mecanum Robot","ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.","https://i.postimg.cc/CKR9kVcp/1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png","",["ESP32-CAM","Mecanum Wheels","OpenCV"]],
-["Robotics","🍽️","Velino Food Delivery Robot","Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.","https://i.postimg.cc/dVjVpGF4/Screenshot-2026-05-24-at-3-25-03-PM.png","",["ESP32","IR Sensors","LCD","DC Motors"]],
-["IoT & ESP32","🎮","Velino AirPad","ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.","https://portfolio-web-sigma-inky.vercel.app/VELINO%20AIRPAD.png","",["ESP32","MPU6050","Bluetooth HID"]],
-["Hardware & PCB","🔧","Velino Board S1","Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.","https://portfolio-web-sigma-inky.vercel.app/VELINO%20S1.png","",["ESP32","PCB Design","IoT"]],
-["Software & Web","📱","Vaddi Calculator (Android)","Android financial calculator built with MIT App Inventor for interest, EMI and loan repayment.","","",["MIT App Inventor","Android","EMI"]],
-["AI & Vision","🐾","Velino C3 AI Bot","ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.","https://portfolio-web-sigma-inky.vercel.app/VELINO%20C3%20BOT.png","",["ESP32","Voice Control","Wi-Fi"]],
-["AI & Vision","🚗","Zone Based ADAS","Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.","","",["Python","OpenCV","Computer Vision"]],
-["IoT & ESP32","🗺️","Velino Map Navigator","ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.","https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp","",["ESP32","GPS","Maps API"]],
-["Arduino","💊","Smart Medicine Reminder","Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.","https://portfolio-web-sigma-inky.vercel.app/DIGITAL%20CLOCK.png","",["Arduino","RTC","LCD","Buzzer"]],
-["Arduino","🏠","Bluetooth Home Automation","Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.","https://i.postimg.cc/1zQwd6bm/720A0A9E-71B2-4DB3-9EB5-A308C83EB9EA.png","",["Arduino Uno","HC-05","Relay","DHT11"]],
-["Software & Web","⌨️","Velino TypeX","Typing speed trainer web app with live WPM, accuracy analysis, timed challenges, themes and statistics.","https://i.postimg.cc/8zJSFFxZ/Screenshot-2026-06-11-at-6-54-20-PM.png","https://velino-type-x.vercel.app/",["HTML","CSS","JavaScript"]],
-["Robotics","🖐️","Bionic Hand","EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.","https://portfolio-web-sigma-inky.vercel.app/BIONIC%20HAND.png","",["EMG","Arduino","Biomedical"]]
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+const WA = "919963761162";
+
+const whatsappLink = message =>
+  "https://wa.me/" +
+  WA +
+  "?text=" +
+  encodeURIComponent(message);
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+const CATS = [
+
+  [
+    "🤖",
+    "Robotics",
+    "Arms, mecanum and delivery robots",
+    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=85"
+  ],
+
+  [
+    "📡",
+    "IoT & ESP32",
+    "Wireless, GPS and smart devices",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
+  ],
+
+  [
+    "⚡",
+    "Arduino",
+    "Sensors, automation and mini builds",
+    "https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=1000&q=85"
+  ],
+
+  [
+    "💻",
+    "Software & Web",
+    "Websites, applications and digital tools",
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85"
+  ],
+
+  [
+    "🧠",
+    "AI & Vision",
+    "Machine learning, computer vision and assistants",
+    "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=85"
+  ],
+
+  [
+    "🔧",
+    "Hardware & PCB",
+    "Custom boards and electronic circuits",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
+  ]
+
 ];
-var cur="All";
-function link(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t)}
-var tech=["Arduino","IoT","Robotics","Raspberry Pi","Solar","Mechanical","Machine Learning","Science Fair","Embedded","Electronics"];
-document.getElementById("track").innerHTML=tech.concat(tech).map(function(t){return "<span>✦ "+t+"</span>"}).join("");
-var cls=["t1","","","t4","",""];
-document.getElementById("cats").innerHTML=CATS.map(function(c,i){return '<a class="tile glass rv '+cls[i]+'" href="#projects" onclick="setCat(\''+c[1]+'\')"><div class="ico">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></a>'}).join("");
-document.querySelectorAll(".tile").forEach(function(t){t.addEventListener("mousemove",function(e){var r=t.getBoundingClientRect();t.style.setProperty("--x",(e.clientX-r.left)+"px");t.style.setProperty("--y",(e.clientY-r.top)+"px")})});
-function render(){
-var names=["All"].concat(CATS.map(function(c){return c[1]}));
-document.getElementById("tabs").innerHTML=names.map(function(n){return '<button class="tab'+(n===cur?' on':'')+'" onclick="setCat(\''+n+'\')">'+n+'</button>'}).join("");
-document.getElementById("plist").innerHTML=P.filter(function(p){return cur==="All"||p[0]===cur}).map(function(p){
-var img=p[4]?'<img src="'+p[4]+'" alt="'+p[2]+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">':'';
-var demo=p[5]?'<a href="'+p[5]+'" target="_blank" rel="noopener">Live demo ↗</a>':'';
-var chips=p[6].map(function(t){return "<span>"+t+"</span>"}).join("");
-return '<div class="proj glass rv in"><div class="thumb"><span>'+p[1]+'</span>'+img+'</div><h3>'+p[2]+'</h3><p>'+p[3]+'</p><div class="chips">'+chips+'</div><div class="meta"><span class="tag">'+p[0]+'</span><span class="lk">'+demo+'<a href="'+link("Hi, I’m interested in: "+p[2])+'" target="_blank" rel="noopener">Enquire →</a></span></div></div>'}).join("");
+
+
+/* =========================================================
+   PROJECT DATA
+========================================================= */
+
+const P = [
+
+  [
+    "Robotics",
+    "🦾",
+    "DUM-E 6-Axis Robotic Arm",
+    "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.",
+    "https://i.postimg.cc/xjRV0Jvn/IMG-2819-Original.jpg",
+    "",
+    [
+      "Arduino",
+      "Servo Motors",
+      "Robotics"
+    ]
+  ],
+
+
+  [
+    "Software & Web",
+    "🧮",
+    "VADDI Calculator Pro",
+    "Financial web app for simple interest, compound interest, EMI and loans, with PDF reports, offline PWA and multiple languages.",
+    "https://portfolio-web-sigma-inky.vercel.app/VADDI%20APP.png",
+    "https://vaddi-calculator-pro.vercel.app/",
+    [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PWA"
+    ]
+  ],
+
+
+  [
+    "Robotics",
+    "🤝",
+    "Master Slave Robotic Arm",
+    "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.",
+    "https://portfolio-web-sigma-inky.vercel.app/MSRA.png",
+    "",
+    [
+      "Arduino",
+      "Flex Sensors",
+      "Servo Motors"
+    ]
+  ],
+
+
+  [
+    "Robotics",
+    "🛞",
+    "Mecanum Robot",
+    "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.",
+    "https://i.postimg.cc/CKR9kVcp/1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png",
+    "",
+    [
+      "ESP32-CAM",
+      "Mecanum Wheels",
+      "OpenCV"
+    ]
+  ],
+
+
+  [
+    "Robotics",
+    "🍽️",
+    "Food Delivery Robot",
+    "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.",
+    "https://i.postimg.cc/dVjVpGF4/Screenshot-2026-05-24-at-3-25-03-PM.png",
+    "",
+    [
+      "ESP32",
+      "IR Sensors",
+      "LCD",
+      "DC Motors"
+    ]
+  ],
+
+
+  [
+    "IoT & ESP32",
+    "🎮",
+    "AirPad Wireless Controller",
+    "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.",
+    "https://portfolio-web-sigma-inky.vercel.app/VELINO%20AIRPAD.png",
+    "",
+    [
+      "ESP32",
+      "MPU6050",
+      "Bluetooth HID"
+    ]
+  ],
+
+
+  [
+    "Hardware & PCB",
+    "🔧",
+    "ESP32 Development Board",
+    "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.",
+    "https://portfolio-web-sigma-inky.vercel.app/VELINO%20S1.png",
+    "",
+    [
+      "ESP32",
+      "PCB Design",
+      "IoT"
+    ]
+  ],
+
+
+  /* =====================================================
+     FIXED IMAGE
+     VADDI CALCULATOR ANDROID
+  ===================================================== */
+
+  [
+    "Software & Web",
+    "📱",
+    "Vaddi Calculator (Android)",
+    "Android financial calculator built with MIT App Inventor for interest, EMI and loan repayment.",
+    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
+    "",
+    [
+      "MIT App Inventor",
+      "Android",
+      "EMI"
+    ]
+  ],
+
+
+  [
+    "AI & Vision",
+    "🐾",
+    "ESP32 C3 AI Bot",
+    "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.",
+    "https://portfolio-web-sigma-inky.vercel.app/VELINO%20C3%20BOT.png",
+    "",
+    [
+      "ESP32",
+      "Voice Control",
+      "Wi-Fi"
+    ]
+  ],
+
+
+  /* =====================================================
+     FIXED IMAGE
+     ZONE BASED ADAS
+  ===================================================== */
+
+  [
+    "AI & Vision",
+    "🚗",
+    "Zone Based ADAS",
+    "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.",
+    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
+    "",
+    [
+      "Python",
+      "OpenCV",
+      "Computer Vision"
+    ]
+  ],
+
+
+  [
+    "IoT & ESP32",
+    "🗺️",
+    "GPS Map Navigator",
+    "ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.",
+    "https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp",
+    "",
+    [
+      "ESP32",
+      "GPS",
+      "Maps API"
+    ]
+  ],
+
+
+  [
+    "Arduino",
+    "💊",
+    "Smart Medicine Reminder",
+    "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.",
+    "https://portfolio-web-sigma-inky.vercel.app/DIGITAL%20CLOCK.png",
+    "",
+    [
+      "Arduino",
+      "RTC",
+      "LCD",
+      "Buzzer"
+    ]
+  ],
+
+
+  [
+    "Arduino",
+    "🏠",
+    "Bluetooth Home Automation",
+    "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.",
+    "https://i.postimg.cc/1zQwd6bm/720A0A9E-71B2-4DB3-9EB5-A308C83EB9EA.png",
+    "",
+    [
+      "Arduino Uno",
+      "HC-05",
+      "Relay",
+      "DHT11"
+    ]
+  ],
+
+
+  [
+    "Software & Web",
+    "⌨️",
+    "TypeX Typing Trainer",
+    "Typing speed trainer web app with live WPM, accuracy analysis, timed challenges, themes and statistics.",
+    "https://i.postimg.cc/8zJSFFxZ/Screenshot-2026-06-11-at-6-54-20-PM.png",
+    "https://velino-type-x.vercel.app/",
+    [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  ],
+
+
+  [
+    "Robotics",
+    "🖐️",
+    "Bionic Hand",
+    "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.",
+    "https://portfolio-web-sigma-inky.vercel.app/BIONIC%20HAND.png",
+    "",
+    [
+      "EMG",
+      "Arduino",
+      "Biomedical"
+    ]
+  ]
+
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let cur = "All";
+
+
+const tech = [
+  "Arduino",
+  "IoT",
+  "Robotics",
+  "Raspberry Pi",
+  "Solar",
+  "Mechanical",
+  "Machine Learning",
+  "Science Fair",
+  "Embedded",
+  "Electronics"
+];
+
+
+document.getElementById("track").innerHTML =
+  tech
+    .concat(tech)
+    .map(x => `<span>✦ ${x}</span>`)
+    .join("");
+
+
+/* =========================================================
+   SECURITY HELPERS
+========================================================= */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
 }
-function setCat(c){cur=c;render()}
-function send(e){e.preventDefault();
-var t="Hi, I’m "+n.value+" ("+p.value+"). Need help with: "+document.getElementById("t").value+(m.value?". "+m.value:"");
-window.open(link(t),"_blank");return false}
-var g=link("Hi, I need help choosing a project");
-document.getElementById("cta").href=g;document.getElementById("wa").href=g;
+
+
+function escapeAttribute(value){
+
+  return String(value)
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'")
+    .replace(/"/g,"&quot;");
+
+}
+
+
+/* =========================================================
+   CATEGORY CARDS
+========================================================= */
+
+const categoryClasses = [
+  "t1",
+  "",
+  "",
+  "t4",
+  "",
+  ""
+];
+
+
+document.getElementById("cats").innerHTML =
+
+  CATS.map((c,i) => `
+
+    <a
+      class="tile glass rv ${categoryClasses[i]}"
+      style="
+        background-image:
+        linear-gradient(
+          180deg,
+          rgba(7,11,22,.05),
+          rgba(7,11,22,.2)
+        ),
+        url('${c[3]}')
+      "
+      href="#projects"
+      onclick="setCat('${escapeAttribute(c[1])}')"
+    >
+
+      <div class="ico">
+        ${c[0]}
+      </div>
+
+      <h3>
+        ${c[1]}
+      </h3>
+
+      <p>
+        ${c[2]}
+      </p>
+
+    </a>
+
+  `).join("");
+
+
+/* =========================================================
+   CATEGORY MOUSE EFFECT
+========================================================= */
+
+document
+  .querySelectorAll(".tile")
+  .forEach(tile => {
+
+    tile.addEventListener(
+      "mousemove",
+      e => {
+
+        const r =
+          tile.getBoundingClientRect();
+
+        tile.style.setProperty(
+          "--x",
+          (e.clientX - r.left) + "px"
+        );
+
+        tile.style.setProperty(
+          "--y",
+          (e.clientY - r.top) + "px"
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   PROJECT RENDER
+========================================================= */
+
+function render(){
+
+  const names = [
+    "All",
+    ...CATS.map(c => c[1])
+  ];
+
+
+  document.getElementById("tabs").innerHTML =
+
+    names.map(name => `
+
+      <button
+        type="button"
+        class="tab ${name === cur ? "on" : ""}"
+        onclick="setCat('${escapeAttribute(name)}')"
+      >
+        ${name}
+      </button>
+
+    `).join("");
+
+
+  const filtered = P.filter(
+    project =>
+      cur === "All" ||
+      project[0] === cur
+  );
+
+
+  document.getElementById("plist").innerHTML =
+
+    filtered.length
+
+      ? filtered.map((project,i) => {
+
+          const [
+            category,
+            emoji,
+            title,
+            description,
+            image,
+            demo,
+            chips
+          ] = project;
+
+
+          const imageHTML = image
+
+            ? `
+
+              <img
+                src="${image}"
+                alt="${escapeHTML(title)}"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+            `
+
+            : "";
+
+
+          const demoHTML = demo
+
+            ? `
+
+              <a
+                href="${demo}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live demo ↗
+              </a>
+
+            `
+
+            : "";
+
+
+          return `
+
+            <article
+              class="proj glass rv"
+              style="
+                transition-delay:
+                ${Math.min(i * 60,360)}ms
+              "
+            >
+
+              <div class="thumb">
+
+                <span>
+                  ${emoji}
+                </span>
+
+                ${imageHTML}
+
+              </div>
+
+
+              <h3>
+                ${escapeHTML(title)}
+              </h3>
+
+
+              <p>
+                ${escapeHTML(description)}
+              </p>
+
+
+              <div class="chips">
+
+                ${chips
+                  .map(
+                    c =>
+                      `<span>${escapeHTML(c)}</span>`
+                  )
+                  .join("")
+                }
+
+              </div>
+
+
+              <div class="meta">
+
+                <span class="tag">
+                  ${escapeHTML(category)}
+                </span>
+
+
+                <span class="lk">
+
+                  ${demoHTML}
+
+                  <a
+                    href="${whatsappLink(
+                      "Hi, I’m interested in: " +
+                      title
+                    )}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Enquire →
+                  </a>
+
+                </span>
+
+              </div>
+
+            </article>
+
+          `;
+
+        }).join("")
+
+
+      : `
+
+        <div
+          class="proj glass"
+          style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:50px
+          "
+        >
+
+          <h3>
+            No projects found
+          </h3>
+
+          <p>
+            Try another category.
+          </p>
+
+        </div>
+
+      `;
+
+
+  /*
+    IMPORTANT:
+    Attach image fallback AFTER the
+    project HTML has been inserted.
+  */
+
+  document
+    .querySelectorAll(".thumb img")
+    .forEach(img => {
+
+      const thumb =
+        img.closest(".thumb");
+
+
+      const emoji =
+        thumb.querySelector("span");
+
+
+      function imageLoaded(){
+
+        thumb.classList.add(
+          "image-loaded"
+        );
+
+        thumb.classList.remove(
+          "image-failed"
+        );
+
+        img.style.display = "block";
+
+        if(emoji){
+          emoji.style.display = "none";
+        }
+
+      }
+
+
+      function imageFailed(){
+
+        thumb.classList.remove(
+          "image-loaded"
+        );
+
+        thumb.classList.add(
+          "image-failed"
+        );
+
+        img.style.display = "none";
+
+        if(emoji){
+          emoji.style.display = "grid";
+        }
+
+      }
+
+
+      img.addEventListener(
+        "load",
+        imageLoaded
+      );
+
+
+      img.addEventListener(
+        "error",
+        imageFailed
+      );
+
+
+      /*
+        Handles browser-cached images.
+      */
+
+      if(img.complete){
+
+        if(img.naturalWidth > 0){
+
+          imageLoaded();
+
+        }else{
+
+          imageFailed();
+
+        }
+
+      }
+
+    });
+
+
+  observeReveal();
+
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+function setCat(category){
+
+  cur = category;
+
+  render();
+
+  closeMenus();
+
+
+  if(
+    window.location.hash === "#projects" ||
+    category !== "All"
+  ){
+
+    setTimeout(
+      () => {
+
+        document
+          .getElementById("projects")
+          .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+          });
+
+      },
+      50
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   FORM → WHATSAPP
+========================================================= */
+
+function send(event){
+
+  event.preventDefault();
+
+
+  const name =
+    document
+      .getElementById("nameInput")
+      .value
+      .trim();
+
+
+  const phone =
+    document
+      .getElementById("phoneInput")
+      .value
+      .trim();
+
+
+  const type =
+    document
+      .getElementById("typeInput")
+      .value;
+
+
+  const message =
+    document
+      .getElementById("messageInput")
+      .value
+      .trim();
+
+
+  let text =
+    `Hi, I’m ${name} (${phone}). I need help with: ${type}`;
+
+
+  if(message){
+    text += ". " + message;
+  }
+
+
+  window.open(
+    whatsappLink(text),
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+
+  return false;
+
+}
+
+
+/* =========================================================
+   GENERAL WHATSAPP LINKS
+========================================================= */
+
+const generalWhatsApp =
+  whatsappLink(
+    "Hi, I need help choosing a project."
+  );
+
+
+document.getElementById("cta").href =
+  generalWhatsApp;
+
+
+document.getElementById("wa").href =
+  generalWhatsApp;
+
+
+/* =========================================================
+   DESKTOP DROPDOWNS
+========================================================= */
+
+document
+  .querySelectorAll(".nav-trigger")
+  .forEach(trigger => {
+
+    trigger.addEventListener(
+      "click",
+      e => {
+
+        e.stopPropagation();
+
+
+        const item =
+          trigger.closest(".nav-item");
+
+
+        document
+          .querySelectorAll(".nav-item.open")
+          .forEach(x => {
+
+            if(x !== item){
+              x.classList.remove("open");
+            }
+
+          });
+
+
+        const open =
+          item.classList.toggle("open");
+
+
+        trigger.setAttribute(
+          "aria-expanded",
+          open
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+  document.getElementById(
+    "menuToggle"
+  );
+
+
+const mobileNav =
+  document.getElementById(
+    "mobileNav"
+  );
+
+
+menuToggle.addEventListener(
+  "click",
+  e => {
+
+    e.stopPropagation();
+
+
+    const open =
+      mobileNav.classList.toggle(
+        "open"
+      );
+
+
+    menuToggle.classList.toggle(
+      "open",
+      open
+    );
+
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      open
+    );
+
+  }
+);
+
+
+/* =========================================================
+   MOBILE DROPDOWNS
+========================================================= */
+
+document
+  .querySelectorAll(".mobile-trigger")
+  .forEach(trigger => {
+
+    trigger.addEventListener(
+      "click",
+      () => {
+
+        const target =
+          document.getElementById(
+            "mobile" +
+            trigger.dataset.mobile
+              .charAt(0)
+              .toUpperCase() +
+            trigger.dataset.mobile.slice(1)
+          );
+
+
+        const open =
+          target.classList.toggle(
+            "open"
+          );
+
+
+        trigger.classList.toggle(
+          "open",
+          open
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   CLOSE MENUS
+========================================================= */
+
+function closeMenus(){
+
+  document
+    .querySelectorAll(".nav-item.open")
+    .forEach(
+      x =>
+        x.classList.remove("open")
+    );
+
+
+  document
+    .querySelectorAll(".nav-trigger")
+    .forEach(
+      x =>
+        x.setAttribute(
+          "aria-expanded",
+          "false"
+        )
+    );
+
+
+  mobileNav.classList.remove(
+    "open"
+  );
+
+
+  menuToggle.classList.remove(
+    "open"
+  );
+
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+
+  document
+    .querySelectorAll(
+      ".mobile-sub.open,.mobile-trigger.open"
+    )
+    .forEach(
+      x =>
+        x.classList.remove("open")
+    );
+
+}
+
+
+/* =========================================================
+   OUTSIDE CLICK
+========================================================= */
+
+document.addEventListener(
+  "click",
+  e => {
+
+    if(
+      !e.target.closest(".nav")
+    ){
+
+      closeMenus();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  e => {
+
+    if(e.key === "Escape"){
+      closeMenus();
+    }
+
+  }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+let observer;
+
+
+function observeReveal(){
+
+  if(!observer){
+
+    observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if(
+                entry.isIntersecting
+              ){
+
+                entry.target.classList.add(
+                  "in"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold:.12,
+          rootMargin:
+            "0px 0px -30px 0px"
+        }
+      );
+
+  }
+
+
+  document
+    .querySelectorAll(
+      ".rv:not(.in)"
+    )
+    .forEach(
+      el =>
+        observer.observe(el)
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
 render();
-var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
-document.querySelectorAll(".rv:not(.in)").forEach(function(el){io.observe(el)});
+
+observeReveal();
+
+
+/* =========================================================
+   HASH CHANGE
+========================================================= */
+
+window.addEventListener(
+  "hashchange",
+  () => {
+
+    if(
+      window.location.hash ===
+      "#projects"
+    ){
+
+      setTimeout(
+        () => {
+
+          document
+            .getElementById("projects")
+            .scrollIntoView({
+              behavior:"smooth",
+              block:"start"
+            });
+
+        },
+        100
+      );
+
+    }
+
+  }
+);
+
 </script>
+
 </body>
+
 </html>
