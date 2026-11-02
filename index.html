@@ -23,8 +23,8 @@
 <style>
 
 :root{
-  --bg:#f6f7fb;
-  --card:rgba(255,255,255,.75);
+  --bg:#ffffff;
+  --card:#ffffff;
   --solid:#fff;
   --ink:#0b1220;
   --mute:#5d6882;
@@ -1498,6 +1498,38 @@ footer .copy{
 
 }
 
+
+/* UPGRADE: SEARCH, DETAILS MODAL AND SERVICES */
+.project-tools{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 22px}
+.project-search-wrap{position:relative;flex:1 1 280px;max-width:520px}
+.project-search-wrap input{width:100%;margin:0;padding:14px 18px 14px 46px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);outline:none}
+.project-search-wrap input:focus{border-color:var(--b);box-shadow:0 0 0 3px rgba(124,92,255,.12)}
+.project-search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--mute);font-size:18px;pointer-events:none}
+.project-count{color:var(--mute);font-size:13px;font-weight:600}
+.proj{display:flex;flex-direction:column;min-width:0}
+.proj .project-spacer{flex:1}
+.project-actions{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin:14px 8px 4px}
+.details-btn{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:7px 13px;font:600 12px Inter,sans-serif;cursor:pointer;transition:.2s}
+.details-btn:hover{border-color:var(--b);color:var(--b);transform:translateY(-1px)}
+.project-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,7,18,.76);backdrop-filter:blur(10px)}
+.project-modal.open{display:flex}
+.project-dialog{position:relative;width:min(860px,100%);max-height:min(88vh,900px);overflow:auto;border:1px solid var(--line);border-radius:26px;background:var(--solid);color:var(--ink);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.project-dialog-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;padding:28px}
+.project-dialog-image{width:100%;height:100%;min-height:280px;max-height:430px;object-fit:cover;border-radius:18px;background:linear-gradient(135deg,#1b2550,#7c5cff 60%,#ff6a2b)}
+.project-dialog-content{padding:8px 4px}
+.project-dialog-content h2{font-size:clamp(25px,4vw,36px);margin:10px 0}
+.project-dialog-content p{color:var(--mute)}
+.project-dialog-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:var(--solid);color:var(--ink);font-size:23px;cursor:pointer;z-index:2}
+.project-modal-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+.project-modal-tags span{padding:6px 11px;border-radius:99px;background:var(--line);color:var(--mute);font-size:12px}
+.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.service-card{padding:24px;border-radius:20px;min-width:0}
+.service-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:var(--grad);color:#fff;font-size:23px;margin-bottom:14px}
+.service-card h3{margin:0 0 7px;font-size:18px}
+.service-card p{margin:0;color:var(--mute);font-size:14px}
+@media(max-width:760px){.project-dialog-inner{grid-template-columns:1fr;padding:20px}.project-dialog-image{height:220px;min-height:220px}.services-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.project-tools{align-items:stretch}.project-search-wrap{max-width:none}.services-grid{grid-template-columns:1fr}.project-modal{padding:10px}.project-dialog{max-height:94vh}}
+
 </style>
 
 </head>
@@ -1835,6 +1867,14 @@ footer .copy{
       </div>
 
 
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
       <a href="#process">
         Process
       </a>
@@ -1920,7 +1960,7 @@ footer .copy{
           class="btn ghost"
           href="#enquire"
         >
-          Free Consultation
+          Consultation
         </a>
 
       </div>
@@ -1934,7 +1974,7 @@ footer .copy{
         </div>
 
         <div>
-          <b>10+</b>
+          <b>5+</b>
           <small>Years experience</small>
         </div>
 
@@ -1949,7 +1989,148 @@ footer .copy{
 
 
     <!-- ENQUIRY FORM -->
-
+<style>
+  /* Liquid Glass Enquiry Form */
+  .form {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  
+    background: rgba(255, 255, 255, 0.752);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 26px;
+  
+    box-shadow:
+      0 8px 32px rgba(31, 38, 135, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+  }
+  
+  /* Glass highlight */
+  .form::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.75),
+      transparent 45%,
+      rgba(255,255,255,0.15)
+    );
+    opacity: 0.7;
+  }
+  
+  .form > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .form h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .form p {
+    margin: 0 0 8px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Glass input fields */
+  .form input,
+  .form select,
+  .form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+  
+    color: #1e293b;
+    font: inherit;
+    font-size: 14px;
+  
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 14px;
+  
+    outline: none;
+    transition: all 0.25s ease;
+    box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.025);
+  }
+  
+  .form input::placeholder,
+  .form textarea::placeholder {
+    color: #94a3b8;
+  }
+  
+  .form input:focus,
+  .form select:focus,
+  .form textarea:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(59, 130, 246, 0.65);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.10);
+  }
+  
+  .form select {
+    cursor: pointer;
+  }
+  
+  .form textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+  
+  /* Liquid Glass button */
+  .form .btn {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+  
+    background: linear-gradient(135deg, #58029f, #4f46e5);
+    color: #fff;
+  
+    font-size: 15px;
+    font-weight: 650;
+    cursor: pointer;
+  
+    box-shadow:
+      0 8px 20px rgba(37, 99, 235, 0.20),
+      inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .form .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.28);
+  }
+  
+  .form .btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .form {
+      padding: 24px 20px;
+      border-radius: 22px;
+    }
+  }
+  </style>
     <form
       class="form"
       id="enquire"
@@ -2091,6 +2272,14 @@ footer .copy{
       Working models and prototypes with documentation support.
     </p>
 
+    <div class="project-tools rv">
+      <label class="project-search-wrap" for="projectSearch">
+        <span class="project-search-icon" aria-hidden="true">⌕</span>
+        <input id="projectSearch" type="search" placeholder="Search projects, components or technologies..." autocomplete="off">
+      </label>
+      <span class="project-count" id="projectCount" aria-live="polite"></span>
+    </div>
+
     <div
       class="tabs"
       id="tabs"
@@ -2105,6 +2294,23 @@ footer .copy{
 
 </section>
 
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow rv">What we do</span>
+    <h2 class="rv">Engineering services &amp; solutions</h2>
+    <p class="sub rv">From the first idea to a tested prototype, get practical technical support across hardware and software.</p>
+    <div class="services-grid">
+      <article class="service-card glass rv"><div class="service-icon">🤖</div><h3>Project Development</h3><p>Arduino, ESP32, robotics, IoT and final-year engineering prototypes.</p></article>
+      <article class="service-card glass rv"><div class="service-icon">🔧</div><h3>PCB &amp; Electronics</h3><p>Circuit design, PCB development, component selection and hardware testing.</p></article>
+      <article class="service-card glass rv"><div class="service-icon">💻</div><h3>Software &amp; AI</h3><p>Web applications, embedded software, computer vision and AI-based solutions.</p></article>
+      <article class="service-card glass rv"><div class="service-icon">🧪</div><h3>Testing &amp; Debugging</h3><p>Hardware troubleshooting, code debugging and prototype validation.</p></article>
+      <article class="service-card glass rv"><div class="service-icon">📘</div><h3>Documentation</h3><p>Project reports, block diagrams, circuit explanations and presentation support.</p></article>
+      <article class="service-card glass rv"><div class="service-icon">🎓</div><h3>Technical Guidance</h3><p>Component guidance, implementation planning and project demonstration preparation.</p></article>
+    </div>
+  </div>
+</section>
 
 <!-- =========================================================
      PROCESS
@@ -2302,6 +2508,265 @@ footer .copy{
 
 </main>
 
+
+<!-- Project details popup -->
+<div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="project-dialog">
+    <button class="project-dialog-close" type="button" aria-label="Close project details" onclick="closeProjectDetails()">×</button>
+    <div class="project-dialog-inner" id="projectModalBody"></div>
+  </div>
+</div>
+<!-- LAB & OFFICE GALLERY -->
+<section class="lab-office-section" id="lab-office">
+  <div class="section-heading">
+      <span class="section-tag">OUR WORKSPACE</span>
+      <h2>Inside Our <span>Lab & Office</span></h2>
+      <p>
+          Explore the workspace where ideas turn into reality.
+          From electronics development to robotics and innovation,
+          this is where we design, build, test, and create.
+      </p>
+  </div>
+
+  <div class="lab-gallery">
+
+      <!-- Main Lab Image -->
+      <div class="lab-card lab-card-large">
+          <img src="0960AFB0-0D8E-494C-8E77-807787F4EB98.PNG" alt="SV Tech Solutions Electronics Lab">
+          <div class="lab-overlay">
+              <h3>Electronics Development Lab</h3>
+              <p>Designing and testing electronic systems</p>
+          </div>
+      </div>
+
+      <!-- Robotics Lab -->
+      <div class="lab-card">
+          <img src="Screenshot 2026-11-02 at 5.45.24 PM.png" alt="Robotics Development Lab">
+          <div class="lab-overlay">
+              <h3>Robotics Lab</h3>
+              <p>Building intelligent robotic solutions</p>
+          </div>
+      </div>
+
+      <!-- Testing Area -->
+      <div class="lab-card">
+          <img src="3CED53E5-A439-4838-A2C0-0B655A83EFC2.PNG" alt="Electronics Testing Area">
+          <div class="lab-overlay">
+              <h3>Testing & Prototyping</h3>
+              <p>Testing circuits and hardware prototypes</p>
+          </div>
+      </div>
+
+      <!-- Development Workspace -->
+      <div class="lab-card">
+          <img src="IMG_4870.JPG" alt="Software Development Workspace">
+          <div class="lab-overlay">
+              <h3>Development Workspace</h3>
+              <p>Embedded software, IoT and AI development</p>
+          </div>
+      </div>
+
+      <!-- Office -->
+      <div class="lab-card">
+          <img src="IMG_4871.JPG" alt="SV Tech Solutions Office">
+          <div class="lab-overlay">
+              <h3>Our Office</h3>
+              <p>Planning, collaboration and innovation</p>
+          </div>
+      </div>
+
+  </div>
+</section>
+<style>
+  /* LAB & OFFICE GALLERY — FULLY RESPONSIVE */
+  
+  .lab-office-section {
+      width: 100%;
+      box-sizing: border-box;
+      padding: clamp(45px, 7vw, 90px) clamp(16px, 5vw, 7%);
+      background: #ffffff;
+      overflow: hidden;
+  }
+  
+/* LEFT-ALIGNED HEADING — SCOPED TO THIS GALLERY ONLY */
+
+.lab-office-section .section-heading {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.lab-office-section .section-tag {
+    display: block;
+    text-align: left;
+}
+
+.lab-office-section .section-heading h2 {
+    text-align: left;
+    margin: 15px 0;
+    font-size: clamp(26px, 4vw, 46px);
+    color: #111827;
+}
+
+.lab-office-section .section-heading p {
+    text-align: left;
+    margin: 0;
+    max-width: 700px;
+    color: #64748b;
+    line-height: 1.8;
+}
+ 
+  
+  .lab-gallery {
+      display: grid;
+      width: 100%;
+      max-width: 1250px;
+      margin: 0 auto;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: clamp(180px, 22vw, 270px);
+      gap: clamp(10px, 1.5vw, 20px);
+  }
+  
+  .lab-card {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      border-radius: clamp(10px, 1.5vw, 18px);
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  .lab-card-large {
+      grid-column: span 2;
+      grid-row: span 2;
+  }
+  
+  .lab-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+  }
+  
+  .lab-card:hover img {
+      transform: scale(1.06);
+  }
+  
+  .lab-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(12px, 2vw, 25px);
+      background: linear-gradient(
+          to top,
+          rgba(15, 23, 42, 0.9),
+          rgba(15, 23, 42, 0.02)
+      );
+      color: #ffffff;
+  }
+  
+  .lab-overlay h3 {
+      font-size: clamp(14px, 1.7vw, 19px);
+      line-height: 1.3;
+      margin: 0 0 7px;
+  }
+  
+  .lab-overlay p {
+      font-size: clamp(11px, 1.2vw, 13px);
+      line-height: 1.5;
+      color: #e2e8f0;
+      margin: 0;
+  }
+  
+  /* TABLETS */
+  
+  @media (max-width: 900px) {
+      .lab-gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-auto-rows: clamp(170px, 27vw, 230px);
+      }
+  
+      .lab-card-large {
+          grid-column: span 2;
+          grid-row: span 1;
+      }
+  }
+  
+  /* MOBILE */
+  
+  @media (max-width: 600px) {
+      .lab-office-section {
+          padding: 45px 16px;
+      }
+  
+      .lab-office-section .section-heading {
+          margin-bottom: 25px;
+      }
+  
+      .lab-gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-auto-rows: clamp(145px, 43vw, 200px);
+          gap: 10px;
+      }
+  
+      .lab-card-large {
+          grid-column: span 2;
+          grid-row: span 1;
+      }
+  
+      .lab-card {
+          border-radius: 12px;
+      }
+  
+      .lab-overlay {
+          padding: 12px;
+      }
+  
+      .lab-overlay h3 {
+          font-size: 13px;
+      }
+  
+      .lab-overlay p {
+          font-size: 10px;
+      }
+  }
+  
+  /* VERY SMALL MOBILE */
+  
+  @media (max-width: 360px) {
+      .lab-office-section {
+          padding-left: 12px;
+          padding-right: 12px;
+      }
+  
+      .lab-gallery {
+          grid-auto-rows: 140px;
+          gap: 8px;
+      }
+  
+      .lab-overlay h3 {
+          font-size: 12px;
+      }
+  
+      .lab-overlay p {
+          font-size: 9px;
+      }
+  }
+  
+  /* REDUCE ANIMATION FOR ACCESSIBILITY */
+  
+  @media (prefers-reduced-motion: reduce) {
+      .lab-card img {
+          transition: none;
+      }
+  }
+  </style>
 
 <!-- =========================================================
      FOOTER
@@ -2524,7 +2989,7 @@ const P = [
     "🦾",
     "DUM-E 6-Axis Robotic Arm",
     "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.",
-    "https://i.postimg.cc/xjRV0Jvn/IMG-2819-Original.jpg",
+    "IMG_2819_Original.JPG",
     "",
     [
       "Arduino",
@@ -2532,30 +2997,59 @@ const P = [
       "Robotics"
     ]
   ],
-
-
   [
-    "Software & Web",
-    "🧮",
-    "VADDI Calculator Pro",
-    "Financial web app for simple interest, compound interest, EMI and loans, with PDF reports, offline PWA and multiple languages.",
-    "https://portfolio-web-sigma-inky.vercel.app/VADDI%20APP.png",
-    "https://vaddi-calculator-pro.vercel.app/",
+    "Robotics",
+    "🖐️",
+    "Bionic Hand",
+    "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.",
+    "EF02E9BF-4A24-4261-AA2E-4B292B1214C6.PNG",
+    "",
     [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PWA"
+      "EMG",
+      "Arduino",
+      "Biomedical"
     ]
   ],
-
+  
+  // [
+  //   "IOI & Security",
+  //   "Keypad-Based Door lock-System",
+  //   "Electroics Security System that uses a password entered through a matrix keypad to control an electronic door lock.Provides access using password verification and an lcd status display. ",
+  //   "",
+  //   "",
+  //   [
+  //     "Arduino UNO",
+  //      "4X4 Matrix keypad ",
+  //      "Solenoid Door lock",
+  //      "Relay Module  ",
+  //      "16x2 LCD",
+  //      "Buzzer"
+  //   ]
+  // ],
+  
+  [
+  "IoT & Security",
+  "🔐",
+  "Keypad-Based Door Lock System",
+  "A password-based electronic door lock system using a matrix keypad and LCD display for secure access.",
+   "IMG_4859.JPG",
+  "",
+  [
+    "Arduino Uno",
+    "4x4 Matrix Keypad",
+    "Solenoid Door Lock",
+    "Relay Module",
+    "16x2 LCD",
+    "Buzzer"
+  ]
+],
 
   [
     "Robotics",
     "🤝",
     "Master Slave Robotic Arm",
     "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.",
-    "https://portfolio-web-sigma-inky.vercel.app/MSRA.png",
+    "FJ1TWJPL5JM74Q3.webp",
     "",
     [
       "Arduino",
@@ -2564,13 +3058,12 @@ const P = [
     ]
   ],
 
-
   [
     "Robotics",
     "🛞",
     "Mecanum Robot",
     "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.",
-    "https://i.postimg.cc/CKR9kVcp/1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png",
+    "1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png",
     "",
     [
       "ESP32-CAM",
@@ -2579,13 +3072,163 @@ const P = [
     ]
   ],
 
+  [
+    "Robotics",
+    "🤖",
+    "Obstacle Avoidance Robot",
+    "Autonomous robot that detects obstacles using an ultrasonic sensor and automatically changes direction to avoid collisions.",
+    "IMG_4847.JPG",
+    "",
+    [
+      "Arduino Uno",
+      "Ultrasonic Sensor HC-SR04",
+      "Motor Driver L298N",
+      "DC Motors"
+    ]
+  ],
+
+  [
+    "Robotics",
+    "🚗",
+    "Line Following Robot",
+    "Autonomous mobile robot that follows a predefined path using infrared sensors and real-time motor control.",
+    "IMG_4850.JPG",
+    "",
+    [
+      "Arduino Uno",
+      "IR Sensors",
+      "Motor Driver L298N",
+      "DC Motors"
+    ]
+  ],
+
+  [
+    "IoT",
+    "🚿",
+    "WiFi-Based Spraying Robot",
+    "Wireless spraying robot controlled through WiFi using a mobile interface, enabling remote movement and controlled liquid spraying for agricultural applications.",
+    "IMG_4853.JPG",
+    "",
+    [
+      "ESP32",
+      "WiFi Control",
+      "Water Pump",
+      "Motor Driver"
+    ]
+  ],
+  [
+  "IoT & Safety",
+  "🔥",
+  "Fire and Smoke Detection System",
+  "Smart fire and smoke monitoring system that detects smoke and abnormal temperature, activates an alarm and sends real-time alerts to users.",
+  "Screenshot 2026-11-02 at 11.48.36 AM.png",
+  "",
+  [
+    "ESP32",
+    "MQ-2 Smoke Sensor",
+    "Flame Sensor",
+    "Temperature Sensor",
+    "Buzzer"
+  ]
+],
+
+[
+  "Healthcare & IoT",
+  "❤️",
+  "Heart Rate Monitoring System",
+  "Real-time heart rate monitoring system that measures pulse rate using a heart rate sensor and displays BPM readings on an LCD or mobile dashboard.",
+  "IMG_4855.JPG",
+  "",
+  [
+    "ESP32",
+    "MAX30102 Heart Rate Sensor",
+    "OLED Display",
+    "Wi-Fi",
+    "BPM Monitoring"
+  ]
+],
+
+  [
+    "IoT",
+    "🌱",
+    "Automatic Plant Watering System",
+    "Smart irrigation system that monitors soil moisture and automatically activates a water pump when plants need watering.",
+    "IMG_4849.JPG",
+    "",
+    [
+      "ESP32",
+      "Soil Moisture Sensor",
+      "Relay Module",
+      "Water Pump"
+    ]
+  ],
+
+  [
+    "Electronics",
+    "⚡",
+    "Wireless AC Tester",
+    "Wireless AC voltage detection and indication system designed to identify the presence of AC voltage and provide a visual or wireless alert.",
+    "IMG_2122_Original.JPG",
+    "",
+    [
+      "AC Voltage Sensor",
+      "ESP32",
+      "Wireless Communication",
+      "LED Indicator"
+    ]
+  ],
+
+  [
+    "Power Electronics",
+    "🔌",
+    "12V DC to 220V AC Inverter",
+    "DC-to-AC power conversion system that converts a 12V DC input into approximately 220V AC output using an inverter circuit.",
+    "IMG_4851.JPG",
+    "",
+    [
+      "12V Battery",
+      "MOSFET",
+      "Transformer",
+      "Oscillator Circuit"
+    ]
+  ],
+
+  [
+    "Electronics",
+    "🔬",
+    "Transistor Tester",
+    "Electronic testing device designed to identify transistor types and check component terminals and basic operating characteristics.",
+    "IMG_0714_Original.JPG",
+    "",
+    [
+      "Arduino Uno",
+      "NPN Transistor",
+      "PNP Transistor",
+      "16x2 LCD"
+    ]
+  ],
+
+  [
+    "IoT",
+    "🖱️",
+    "Air Mouse",
+    "Motion-controlled wireless mouse that uses hand movements and an inertial sensor to control the computer cursor without a physical mouse.",
+    "Screenshot 2026-11-02 at 2.35.25 PM.png",
+    "",
+    [
+      "ESP32-C3",
+      "MPU6050",
+      "Bluetooth HID",
+      "Wireless Control"
+    ]
+  ],
 
   [
     "Robotics",
     "🍽️",
     "Food Delivery Robot",
     "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.",
-    "https://i.postimg.cc/dVjVpGF4/Screenshot-2026-05-24-at-3-25-03-PM.png",
+    "3C3F80E5-44D2-4184-B4D9-740C96C6FED6.PNG",
     "",
     [
       "ESP32",
@@ -2595,13 +3238,12 @@ const P = [
     ]
   ],
 
-
   [
     "IoT & ESP32",
     "🎮",
     "AirPad Wireless Controller",
     "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.",
-    "https://portfolio-web-sigma-inky.vercel.app/VELINO%20AIRPAD.png",
+    "Screenshot 2026-11-02 at 11.05.38 AM.png",
     "",
     [
       "ESP32",
@@ -2610,13 +3252,12 @@ const P = [
     ]
   ],
 
-
   [
     "Hardware & PCB",
     "🔧",
     "ESP32 Development Board",
     "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.",
-    "https://portfolio-web-sigma-inky.vercel.app/VELINO%20S1.png",
+    "0d8127a1-1661-4f15-84ec-1b3c08a20f64.png",
     "",
     [
       "ESP32",
@@ -2625,33 +3266,12 @@ const P = [
     ]
   ],
 
-
-  /* =====================================================
-     FIXED IMAGE
-     VADDI CALCULATOR ANDROID
-  ===================================================== */
-
-  [
-    "Software & Web",
-    "📱",
-    "Vaddi Calculator (Android)",
-    "Android financial calculator built with MIT App Inventor for interest, EMI and loan repayment.",
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
-    "",
-    [
-      "MIT App Inventor",
-      "Android",
-      "EMI"
-    ]
-  ],
-
-
   [
     "AI & Vision",
     "🐾",
     "ESP32 C3 AI Bot",
     "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.",
-    "https://portfolio-web-sigma-inky.vercel.app/VELINO%20C3%20BOT.png",
+    "IMG_2923 2.jpg",
     "",
     [
       "ESP32",
@@ -2660,18 +3280,12 @@ const P = [
     ]
   ],
 
-
-  /* =====================================================
-     FIXED IMAGE
-     ZONE BASED ADAS
-  ===================================================== */
-
   [
     "AI & Vision",
     "🚗",
     "Zone Based ADAS",
     "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.",
-    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
+    "IMG_4858.jpg",
     "",
     [
       "Python",
@@ -2679,7 +3293,6 @@ const P = [
       "Computer Vision"
     ]
   ],
-
 
   [
     "IoT & ESP32",
@@ -2695,13 +3308,12 @@ const P = [
     ]
   ],
 
-
   [
     "Arduino",
     "💊",
     "Smart Medicine Reminder",
     "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.",
-    "https://portfolio-web-sigma-inky.vercel.app/DIGITAL%20CLOCK.png",
+    "Screenshot 2026-11-02 at 11.05.07 AM.png",
     "",
     [
       "Arduino",
@@ -2711,13 +3323,12 @@ const P = [
     ]
   ],
 
-
   [
     "Arduino",
     "🏠",
     "Bluetooth Home Automation",
     "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.",
-    "https://i.postimg.cc/1zQwd6bm/720A0A9E-71B2-4DB3-9EB5-A308C83EB9EA.png",
+    "Screenshot 2026-11-02 at 2.35.59 PM.png",
     "",
     [
       "Arduino Uno",
@@ -2726,40 +3337,200 @@ const P = [
       "DHT11"
     ]
   ],
-
-
   [
-    "Software & Web",
-    "⌨️",
-    "TypeX Typing Trainer",
-    "Typing speed trainer web app with live WPM, accuracy analysis, timed challenges, themes and statistics.",
-    "https://i.postimg.cc/8zJSFFxZ/Screenshot-2026-06-11-at-6-54-20-PM.png",
-    "https://velino-type-x.vercel.app/",
-    [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ]
-  ],
-
-
+  "IoT & Automation",
+  "🗑️",
+  "Smart Dustbin",
+  "Automatic waste bin that detects nearby objects and opens its lid using an ultrasonic sensor and servo motor.",
+  "IMG_4863.JPG",
+  "",
   [
-    "Robotics",
-    "🖐️",
-    "Bionic Hand",
-    "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.",
-    "https://portfolio-web-sigma-inky.vercel.app/BIONIC%20HAND.png",
-    "",
-    [
-      "EMG",
-      "Arduino",
-      "Biomedical"
-    ]
+    "Arduino Uno",
+    "Ultrasonic Sensor",
+    "Servo Motor",
+    "Waste Detection"
   ]
+],
+
+[
+  "IoT & Security",
+  "🪪",
+  "RFID-Based Attendance System",
+  "Smart attendance system that identifies users through RFID cards and records attendance with date and time.",
+  "maxresdefault.jpg",
+  "",
+  [
+    "ESP32",
+    "RFID RC522",
+    "LCD Display",
+    "Wi-Fi",
+    "Database"
+  ]
+],
+
+[
+  "IoT",
+  "💧",
+  "Water Level Monitoring System",
+  "Smart water tank monitoring system that measures water levels and provides automatic motor control and overflow alerts.",
+  "IMG_4864.JPG",
+  "",
+  [
+    "ESP32",
+    "Ultrasonic Sensor",
+    "Relay Module",
+    "Water Pump",
+    "Wi-Fi"
+  ]
+],
+
+[
+  "IoT & Safety",
+  "🧯",
+  "Gas Leakage Detection System",
+  "Gas monitoring system that detects LPG leakage and activates an alarm with optional mobile notifications.",
+  "IMG_4865.JPG",
+  "",
+  [
+    "ESP32",
+    "MQ-2 Gas Sensor",
+    "Buzzer",
+    "LCD Display",
+    "Wi-Fi"
+  ]
+],
+
+// [
+//   "IoT & Automation",
+//   "🚗",
+//   "Smart Parking System",
+//   "Automated parking management system that detects available parking slots and displays real-time availability.",
+//   "",
+//   "",
+//   [
+//     "ESP32",
+//     "IR Sensors",
+//     "Servo Motor",
+//     "LCD Display",
+//     "IoT Dashboard"
+//   ]
+// ],
+
+// [
+//   "Electronics",
+//   "⚡",
+//   "Smart Energy Meter",
+//   "Electricity monitoring system that measures voltage, current and power consumption and displays energy usage.",
+//   "",
+//   "",
+//   [
+//     "ESP32",
+//     "Voltage Sensor",
+//     "Current Sensor",
+//     "LCD Display",
+//     "Energy Monitoring"
+//   ]
+// ],
+
+[
+  "IoT & Environment",
+  "🌦️",
+  "IoT Weather Monitoring Station",
+  "Connected weather station that measures temperature, humidity, atmospheric pressure and environmental conditions.",
+  "IMG_4866.JPG",
+  "",
+  [
+    "ESP32",
+    "DHT11 / DHT22",
+    "BMP280",
+    "OLED Display",
+    "Cloud Dashboard"
+  ]
+],
+
+// [
+//   "Robotics",
+//   "✋",
+//   "Gesture-Controlled Robot",
+//   "Wireless robot controlled through hand gestures using an accelerometer or gyroscope sensor.",
+//   "",
+//   "",
+//   [
+//     "ESP32",
+//     "MPU6050",
+//     "Bluetooth",
+//     "Motor Driver",
+//     "DC Motors"
+//   ]
+// ],
+
+// [
+//   "IoT & Automation",
+//   "💡",
+//   "Automatic Street Light System",
+//   "Intelligent street lighting system that automatically controls lights according to surrounding brightness and movement.",
+//   "",
+//   "",
+//   [
+//     "Arduino Uno",
+//     "LDR Sensor",
+//     "PIR Sensor",
+//     "Relay Module",
+//     "LED Lights"
+//   ]
+// ],
+
+// [
+//   "AI & Vision",
+//   "👁️",
+//   "Face Recognition Door Access System",
+//   "Computer vision-based security system that identifies registered faces and controls authorized door access.",
+//   "",
+//   "",
+//   [
+//     "ESP32-CAM",
+//     "Python",
+//     "OpenCV",
+//     "Face Recognition",
+//     "Relay Module"
+//   ]
+// ],
+
+// [
+//   "IoT & Agriculture",
+//   "🌾",
+//   "Smart Agriculture Monitoring System",
+//   "IoT-based agriculture system that monitors soil moisture, temperature and humidity to support smart farming.",
+//   "",
+//   "",
+//   [
+//     "ESP32",
+//     "Soil Moisture Sensor",
+//     "DHT22",
+//     "Relay Module",
+//     "Cloud Monitoring"
+//   ]
+// ],
+
+[
+  "Robotics",
+  "🚁",
+  "Obstacle Detection Smart Walking Stick",
+  "Assistive walking stick that detects nearby obstacles and alerts users through vibration and buzzer feedback.",
+  "IMG_4867.JPG",
+  "",
+  [
+    "Arduino Nano",
+    "Ultrasonic Sensor",
+    "Vibration Motor",
+    "Buzzer",
+    "Battery"
+  ]
+]
+
+
 
 ];
-
-
 /* =========================================================
    STATE
 ========================================================= */
@@ -2903,7 +3674,10 @@ function render(){
 
   const names = [
     "All",
-    ...CATS.map(c => c[1])
+    ...new Set([
+      ...CATS.map(c => c[1]),
+      ...P.map(project => project[0])
+    ])
   ];
 
 
@@ -2922,11 +3696,25 @@ function render(){
     `).join("");
 
 
-  const filtered = P.filter(
-    project =>
-      cur === "All" ||
-      project[0] === cur
-  );
+  const searchTerm = (
+    document.getElementById("projectSearch")?.value || ""
+  ).trim().toLowerCase();
+
+  const filtered = P.filter(project => {
+    const categoryMatch = cur === "All" || project[0] === cur;
+    const searchableText = [
+      project[0],
+      project[2],
+      project[3],
+      ...(project[6] || [])
+    ].join(" ").toLowerCase();
+    return categoryMatch && (!searchTerm || searchableText.includes(searchTerm));
+  });
+
+  const count = document.getElementById("projectCount");
+  if(count){
+    count.textContent = `Showing ${filtered.length} of ${P.length} projects`;
+  }
 
 
   document.getElementById("plist").innerHTML =
@@ -3022,6 +3810,14 @@ function render(){
 
               </div>
 
+
+              <div class="project-spacer"></div>
+
+              <div class="project-actions">
+                <button class="details-btn" type="button" onclick="openProjectDetails(${P.indexOf(project)})">
+                  View details ↗
+                </button>
+              </div>
 
               <div class="meta">
 
@@ -3172,6 +3968,55 @@ function render(){
   observeReveal();
 
 }
+
+
+/* PROJECT SEARCH AND DETAILS MODAL */
+function openProjectDetails(index){
+  const project = P[index];
+  if(!project) return;
+  const [category, emoji, title, description, image, demo, chips] = project;
+  const imageMarkup = image
+    ? `<img class="project-dialog-image" src="${image}" alt="${escapeHTML(title)}" onerror="this.style.display='none'">`
+    : `<div class="project-dialog-image" style="display:grid;place-items:center;font-size:72px">${emoji}</div>`;
+  const tags = (chips || []).map(item => `<span>${escapeHTML(item)}</span>`).join("");
+  const demoMarkup = demo
+    ? `<a class="btn ghost" style="color:var(--ink)!important;border-color:var(--line)" href="${demo}" target="_blank" rel="noopener noreferrer">Open live demo ↗</a>`
+    : "";
+  document.getElementById("projectModalBody").innerHTML = `
+    <div>${imageMarkup}</div>
+    <div class="project-dialog-content">
+      <span class="eyebrow">${escapeHTML(category)}</span>
+      <h2 id="modalTitle">${emoji} ${escapeHTML(title)}</h2>
+      <p>${escapeHTML(description)}</p>
+      <h3>Technologies &amp; components</h3>
+      <div class="project-modal-tags">${tags}</div>
+      <div class="cta-row">
+        ${demoMarkup}
+        <a class="btn" href="${whatsappLink("Hi, I’m interested in the " + title + " project. Please share more details.")}" target="_blank" rel="noopener noreferrer">Enquire about project →</a>
+      </div>
+    </div>`;
+  const modal = document.getElementById("projectModal");
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  document.body.style.overflow = "hidden";
+  document.querySelector(".project-dialog-close").focus();
+}
+
+function closeProjectDetails(){
+  const modal = document.getElementById("projectModal");
+  if(!modal) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("projectSearch")?.addEventListener("input", render);
+document.getElementById("projectModal")?.addEventListener("click", event => {
+  if(event.target.id === "projectModal") closeProjectDetails();
+});
+document.addEventListener("keydown", event => {
+  if(event.key === "Escape") closeProjectDetails();
+});
 
 
 /* =========================================================
@@ -3603,6 +4448,49 @@ window.addEventListener(
 );
 
 </script>
+
+
+
+<style>
+/* PURE WHITE THEME ACROSS THE ENTIRE WEBSITE, INCLUDING THE HERO */
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"] {
+  color-scheme: light !important;
+  --bg: #ffffff !important;
+  --card: #ffffff !important;
+  --solid: #ffffff !important;
+  --ink: #0b1220 !important;
+  --mute: #5d6882 !important;
+  --line: rgba(15, 23, 42, .12) !important;
+}
+html, body {
+  background: #ffffff !important;
+  color: #0b1220;
+}
+/* Main page regions, including the hero, use a pure white canvas. */
+header, nav, main, section, footer, .hero, .lab-office-section {
+  background-color: #ffffff !important;
+}
+/* Keep text and controls readable after converting the dark hero. */
+.hero { color: #0b1220 !important; }
+.hero h1, .hero h2, .hero h3, .hero p, .hero .lead,
+.hero .stats, .hero .stats b, .hero .stats span,
+.hero .pill, .hero label {
+  color: #0b1220 !important;
+}
+.hero p.lead { color: #5d6882 !important; }
+.hero .pill {
+  background: #f3f5f9 !important;
+  border-color: #dce2ec !important;
+}
+.hero .btn.ghost {
+  color: #0b1220 !important;
+  border-color: rgba(15, 23, 42, .25) !important;
+}
+.hero .btn.ghost:hover { background: #eef1f6 !important; }
+.hero::after { opacity: .18; }
+</style>
 
 </body>
 
