@@ -21,6 +21,85 @@
 >
 
 <style>
+  /* CLICKABLE PROJECT IMAGES */
+
+.project-image-button {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  text-align: inherit;
+  color: inherit;
+  font: inherit;
+  position: relative;
+  isolation: isolate;
+  outline: none;
+}
+
+.project-image-button img {
+  cursor: pointer;
+}
+
+.project-image-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    to top,
+    rgba(7, 11, 22, .75),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+.image-view-hint {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 10px);
+  padding: 9px 17px;
+  border-radius: 99px;
+  background: rgba(255,255,255,.95);
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transition: .3s ease;
+  pointer-events: none;
+}
+
+.project-image-button:hover::after,
+.project-image-button:hover .image-view-hint,
+.project-image-button:focus-visible::after,
+.project-image-button:focus-visible .image-view-hint {
+  opacity: 1;
+}
+
+.project-image-button:hover .image-view-hint {
+  transform: translate(-50%, 0);
+}
+
+.project-image-button:focus-visible {
+  outline: 3px solid #7c5cff;
+  outline-offset: 4px;
+}
+
+@media (hover: none) {
+  .project-image-button::after {
+    opacity: .25;
+  }
+
+  .project-image-button .image-view-hint {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    bottom: 10px;
+  }
+}
 
 :root{
   --bg:#ffffff;
@@ -2986,7 +3065,7 @@ const P = [
 
   [
     "Robotics",
-    "🦾",
+    "",
     "DUM-E 6-Axis Robotic Arm",
     "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.",
     "IMG_2819_Original.JPG",
@@ -2999,7 +3078,7 @@ const P = [
   ],
   [
     "Robotics",
-    "🖐️",
+    "",
     "Bionic Hand",
     "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.",
     "EF02E9BF-4A24-4261-AA2E-4B292B1214C6.PNG",
@@ -3029,7 +3108,7 @@ const P = [
   
   [
   "IoT & Security",
-  "🔐",
+  "",
   "Keypad-Based Door Lock System",
   "A password-based electronic door lock system using a matrix keypad and LCD display for secure access.",
    "IMG_4859.JPG",
@@ -3046,7 +3125,7 @@ const P = [
 
   [
     "Robotics",
-    "🤝",
+    "",
     "Master Slave Robotic Arm",
     "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.",
     "FJ1TWJPL5JM74Q3.webp",
@@ -3060,7 +3139,7 @@ const P = [
 
   [
     "Robotics",
-    "🛞",
+    "",
     "Mecanum Robot",
     "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.",
     "1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png",
@@ -3074,7 +3153,7 @@ const P = [
 
   [
     "Robotics",
-    "🤖",
+    "",
     "Obstacle Avoidance Robot",
     "Autonomous robot that detects obstacles using an ultrasonic sensor and automatically changes direction to avoid collisions.",
     "IMG_4847.JPG",
@@ -3089,7 +3168,7 @@ const P = [
 
   [
     "Robotics",
-    "🚗",
+    "",
     "Line Following Robot",
     "Autonomous mobile robot that follows a predefined path using infrared sensors and real-time motor control.",
     "IMG_4850.JPG",
@@ -3104,7 +3183,7 @@ const P = [
 
   [
     "IoT",
-    "🚿",
+    "",
     "WiFi-Based Spraying Robot",
     "Wireless spraying robot controlled through WiFi using a mobile interface, enabling remote movement and controlled liquid spraying for agricultural applications.",
     "IMG_4853.JPG",
@@ -3118,7 +3197,7 @@ const P = [
   ],
   [
   "IoT & Safety",
-  "🔥",
+  "",
   "Fire and Smoke Detection System",
   "Smart fire and smoke monitoring system that detects smoke and abnormal temperature, activates an alarm and sends real-time alerts to users.",
   "IMG_4865.JPG",
@@ -3134,7 +3213,7 @@ const P = [
 
 [
   "Healthcare & IoT",
-  "❤️",
+  "",
   "Heart Rate Monitoring System",
   "Real-time heart rate monitoring system that measures pulse rate using a heart rate sensor and displays BPM readings on an LCD or mobile dashboard.",
   "IMG_4855.JPG",
@@ -3150,7 +3229,7 @@ const P = [
 
   [
     "IoT",
-    "🌱",
+    "",
     "Automatic Plant Watering System",
     "Smart irrigation system that monitors soil moisture and automatically activates a water pump when plants need watering.",
     "IMG_4849.JPG",
@@ -3165,7 +3244,7 @@ const P = [
 
   [
     "Electronics",
-    "⚡",
+    "",
     "Wireless AC Tester",
     "Wireless AC voltage detection and indication system designed to identify the presence of AC voltage and provide a visual or wireless alert.",
     "IMG_2122_Original.JPG",
@@ -3180,7 +3259,7 @@ const P = [
 
   [
     "Power Electronics",
-    "🔌",
+    "",
     "12V DC to 220V AC Inverter",
     "DC-to-AC power conversion system that converts a 12V DC input into approximately 220V AC output using an inverter circuit.",
     "IMG_4851.JPG",
@@ -3195,7 +3274,7 @@ const P = [
 
   [
     "Electronics",
-    "🔬",
+    "",
     "Transistor Tester",
     "Electronic testing device designed to identify transistor types and check component terminals and basic operating characteristics.",
     "IMG_0714_Original.JPG",
@@ -3210,7 +3289,7 @@ const P = [
 
   [
     "IoT",
-    "🖱️",
+    "",
     "Air Mouse",
     "Motion-controlled wireless mouse that uses hand movements and an inertial sensor to control the computer cursor without a physical mouse.",
     "airmouse.png",
@@ -3225,7 +3304,7 @@ const P = [
 
   [
     "Robotics",
-    "🍽️",
+    "",
     "Food Delivery Robot",
     "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.",
     "3C3F80E5-44D2-4184-B4D9-740C96C6FED6.PNG",
@@ -3240,7 +3319,7 @@ const P = [
 
   [
     "IoT & ESP32",
-    "🎮",
+    "",
     "AirPad Wireless Controller",
     "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.",
     "airpad.png",
@@ -3254,7 +3333,7 @@ const P = [
 
   [
     "Hardware & PCB",
-    "🔧",
+    "",
     "ESP32 Development Board",
     "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.",
     "si.png",
@@ -3268,7 +3347,7 @@ const P = [
 
   [
     "AI & Vision",
-    "🐾",
+    "",
     "ESP32 C3 AI Bot",
     "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.",
     "bot.jpg",
@@ -3282,7 +3361,7 @@ const P = [
 
   [
     "AI & Vision",
-    "🚗",
+    "",
     "Zone Based ADAS",
     "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.",
     "IMG_4858.jpg",
@@ -3296,7 +3375,7 @@ const P = [
 
   [
     "IoT & ESP32",
-    "🗺️",
+    "",
     "GPS Map Navigator",
     "ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.",
     "https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp",
@@ -3310,7 +3389,7 @@ const P = [
 
   [
     "Arduino",
-    "💊",
+    "",
     "Smart Medicine Reminder",
     "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.",
     "clock.png",
@@ -3325,7 +3404,7 @@ const P = [
 
   [
     "Arduino",
-    "🏠",
+    "",
     "Bluetooth Home Automation",
     "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.",
     "automation.png",
@@ -3339,7 +3418,7 @@ const P = [
   ],
   [
   "IoT & Automation",
-  "🗑️",
+  "",
   "Smart Dustbin",
   "Automatic waste bin that detects nearby objects and opens its lid using an ultrasonic sensor and servo motor.",
   "IMG_4863.JPG",
@@ -3354,7 +3433,7 @@ const P = [
 
 [
   "IoT & Security",
-  "🪪",
+  "",
   "RFID-Based Attendance System",
   "Smart attendance system that identifies users through RFID cards and records attendance with date and time.",
   "maxresdefault.jpg",
@@ -3370,7 +3449,7 @@ const P = [
 
 [
   "IoT",
-  "💧",
+  "",
   "Water Level Monitoring System",
   "Smart water tank monitoring system that measures water levels and provides automatic motor control and overflow alerts.",
   "IMG_4864.JPG",
@@ -3386,7 +3465,7 @@ const P = [
 
 [
   "IoT & Safety",
-  "🧯",
+  "",
   "Gas Leakage Detection System",
   "Gas monitoring system that detects LPG leakage and activates an alarm with optional mobile notifications.",
   "IMG_4865.JPG",
@@ -3434,7 +3513,7 @@ const P = [
 
 [
   "IoT & Environment",
-  "🌦️",
+  "",
   "IoT Weather Monitoring Station",
   "Connected weather station that measures temperature, humidity, atmospheric pressure and environmental conditions.",
   "IMG_4866.JPG",
@@ -3450,7 +3529,7 @@ const P = [
 
 // [
 //   "Robotics",
-//   "✋",
+//   "",
 //   "Gesture-Controlled Robot",
 //   "Wireless robot controlled through hand gestures using an accelerometer or gyroscope sensor.",
 //   "",
@@ -3514,7 +3593,7 @@ const P = [
 
 [
   "Robotics",
-  "🚁",
+  "",
   "Obstacle Detection Smart Walking Stick",
   "Assistive walking stick that detects nearby obstacles and alerts users through vibration and buzzer feedback.",
   "IMG_4867.JPG",
@@ -3777,15 +3856,17 @@ function render(){
               "
             >
 
-              <div class="thumb">
-
-                <span>
-                  ${emoji}
-                </span>
-
-                ${imageHTML}
-
-              </div>
+            <button
+  class="thumb project-image-button"
+  type="button"
+  onclick="openProjectDetails(${P.indexOf(project)})"
+  aria-label="View details about ${escapeHTML(title)}"
+  title="Click to view project details"
+>
+  <span>${emoji}</span>
+  ${imageHTML}
+  <span class="image-view-hint">View Project ↗</span>
+</button>
 
 
               <h3>
@@ -3813,11 +3894,8 @@ function render(){
 
               <div class="project-spacer"></div>
 
-              <div class="project-actions">
-                <button class="details-btn" type="button" onclick="openProjectDetails(${P.indexOf(project)})">
-                  View details ↗
-                </button>
-              </div>
+            
+              
 
               <div class="meta">
 
