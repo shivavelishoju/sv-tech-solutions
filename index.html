@@ -1827,153 +1827,250 @@ footer .copy{
     >
       <span></span>
     </button>
+<!-- MOBILE NAV -->
+<div class="mobile-nav glass" id="mobileNav">
 
+  <div class="mobile-nav-scroll">
 
-    <!-- MOBILE NAV -->
+    <button class="mobile-trigger" type="button"
+      data-mobile="categories" aria-expanded="false">
+      <span>Categories</span>
+      <span class="arrow">▼</span>
+    </button>
 
-    <div
-      class="mobile-nav glass"
-      id="mobileNav"
-    >
-
-      <div
-        class="mobile-trigger"
-        data-mobile="categories"
-      >
-        Categories
-        <span class="arrow">▼</span>
+    <div class="mobile-sub" id="mobileCategories">
+      <div>
+        <a href="#projects" onclick="setCat('Robotics')">🤖 Robotics</a>
+        <a href="#projects" onclick="setCat('IoT & ESP32')">📡 IoT & ESP32</a>
+        <a href="#projects" onclick="setCat('Arduino')">⚡ Arduino</a>
+        <a href="#projects" onclick="setCat('Software & Web')">💻 Software & Web</a>
+        <a href="#projects" onclick="setCat('AI & Vision')">🧠 AI & Vision</a>
+        <a href="#projects" onclick="setCat('Hardware & PCB')">🔧 Hardware & PCB</a>
       </div>
-
-      <div
-        class="mobile-sub"
-        id="mobileCategories"
-      >
-
-        <div>
-
-          <a
-            href="#projects"
-            onclick="setCat('Robotics')"
-          >
-            🤖 Robotics
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('IoT & ESP32')"
-          >
-            📡 IoT & ESP32
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Arduino')"
-          >
-            ⚡ Arduino
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Software & Web')"
-          >
-            💻 Software & Web
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('AI & Vision')"
-          >
-            🧠 AI & Vision
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Hardware & PCB')"
-          >
-            🔧 Hardware & PCB
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="mobile-trigger"
-        data-mobile="projects"
-      >
-        Projects
-        <span class="arrow">▼</span>
-      </div>
-
-      <div
-        class="mobile-sub"
-        id="mobileProjects"
-      >
-
-        <div>
-
-          <a
-            href="#projects"
-            onclick="setCat('All')"
-          >
-            ✦ All Projects
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Robotics')"
-          >
-            🦾 Robotics
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Arduino')"
-          >
-            ⚙️ Arduino
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('IoT & ESP32')"
-          >
-            📶 IoT & ESP32
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <a href="#services">
-        Services
-      </a>
-
-      <a href="#services">
-        Services
-      </a>
-
-      <a href="#process">
-        Process
-      </a>
-
-      <a href="#faq">
-        FAQ
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
-
-      <a
-        class="btn"
-        href="#enquire"
-      >
-        Get a Quote →
-      </a>
-
     </div>
+
+    <button class="mobile-trigger" type="button"
+      data-mobile="projects" aria-expanded="false">
+      <span>Projects</span>
+      <span class="arrow">▼</span>
+    </button>
+
+    <div class="mobile-sub" id="mobileProjects">
+      <div>
+        <a href="#projects" onclick="setCat('All')">✦ All Projects</a>
+        <a href="#projects" onclick="setCat('Robotics')">🦾 Robotics</a>
+        <a href="#projects" onclick="setCat('Arduino')">⚙️ Arduino</a>
+        <a href="#projects" onclick="setCat('IoT & ESP32')">📶 IoT & ESP32</a>
+      </div>
+    </div>
+
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="#lab-office">Our Lab</a>
+    <a href="#contact">Contact</a>
+
+    <a class="btn mobile-quote" href="#enquire">
+      Get a Quote →
+    </a>
+
+  </div>
+</div>
+
+
+   <style>/* =========================================
+    MOBILE NAVBAR - FIXED
+ ========================================= */
+ 
+ @media (max-width: 900px) {
+ 
+   header {
+     top: calc(10px + env(safe-area-inset-top, 0px));
+     left: 0;
+     right: 0;
+     padding: 0 12px;
+     z-index: 999;
+   }
+ 
+   .nav {
+     height: 60px;
+     padding: 0 12px 0 15px;
+     border-radius: 18px;
+     position: relative;
+   }
+ 
+   .logo.brand-lockup {
+     min-width: 0;
+     gap: 0;
+     font-size: 18px;
+   }
+ 
+   .brand-words {
+     white-space: nowrap;
+   }
+ 
+   .menu-toggle {
+     display: block;
+     flex: 0 0 42px;
+     width: 42px;
+     height: 42px;
+     z-index: 1002;
+   }
+ 
+   /* Mobile dropdown container */
+ 
+   .mobile-nav {
+     display: block;
+     position: absolute;
+ 
+     top: calc(100% + 10px);
+     left: 0;
+     right: 0;
+ 
+     width: 100%;
+     max-height: calc(
+       100dvh - 95px - env(safe-area-inset-top, 0px)
+     );
+ 
+     padding: 8px;
+ 
+     border-radius: 20px;
+     overflow: hidden;
+ 
+     opacity: 0;
+     visibility: hidden;
+     pointer-events: none;
+ 
+     transform: translateY(-10px);
+ 
+     background: rgba(255,255,255,.97);
+     border: 1px solid rgba(15,23,42,.12);
+ 
+     box-shadow: 0 20px 50px rgba(15,23,42,.16);
+ 
+     transition:
+       opacity .25s ease,
+       transform .25s ease,
+       visibility .25s ease;
+   }
+ 
+   .mobile-nav.open {
+     opacity: 1;
+     visibility: visible;
+     pointer-events: auto;
+     transform: translateY(0);
+   }
+ 
+   .mobile-nav-scroll {
+     max-height: inherit;
+     overflow-y: auto;
+     overscroll-behavior: contain;
+     padding: 4px;
+ 
+     scrollbar-width: thin;
+   }
+ 
+   .mobile-nav > .mobile-nav-scroll > a,
+   .mobile-nav .mobile-trigger {
+     display: flex;
+     width: 100%;
+     align-items: center;
+     justify-content: space-between;
+ 
+     min-height: 46px;
+     padding: 12px 15px;
+ 
+     border: 0;
+     border-radius: 12px;
+ 
+     background: transparent;
+     color: #0b1220;
+ 
+     font-size: 14px;
+     font-weight: 600;
+     text-decoration: none;
+ 
+     cursor: pointer;
+     transition: background .2s ease;
+   }
+ 
+   .mobile-nav a:hover,
+   .mobile-nav .mobile-trigger:hover {
+     background: #f1f3f9;
+   }
+ 
+   /* Dropdown arrow */
+ 
+   .mobile-trigger .arrow {
+     font-size: 11px;
+     transition: transform .25s ease;
+   }
+ 
+   .mobile-trigger.open .arrow {
+     transform: rotate(180deg);
+   }
+ 
+   /* Expandable submenus */
+ 
+   .mobile-sub {
+     display: grid;
+     grid-template-rows: 0fr;
+     overflow: hidden;
+     transition: grid-template-rows .3s ease;
+   }
+ 
+   .mobile-sub > div {
+     min-height: 0;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     padding-left: 12px;
+   }
+ 
+   .mobile-sub.open {
+     grid-template-rows: 1fr;
+   }
+ 
+   .mobile-sub a {
+     display: block;
+     padding: 10px 14px;
+     color: #64748b;
+     font-size: 13px;
+     border-radius: 10px;
+   }
+ 
+   .mobile-sub a:hover {
+     color: #58029f;
+     background: #f3f0ff;
+   }
+ 
+   .mobile-nav .mobile-quote {
+     justify-content: center;
+     margin-top: 10px;
+     color: #fff !important;
+     background: linear-gradient(120deg,#ff6a2b,#7c5cff);
+   }
+ 
+ }
+ 
+ /* Smaller mobile screens */
+ 
+ @media (max-width: 380px) {
+ 
+   .logo.brand-lockup {
+     font-size: 16px;
+   }
+ 
+   .nav {
+     height: 56px;
+   }
+ 
+   .sv-mark {
+     width: 36px;
+     height: 36px;
+   }
+ 
+ }</style>
 
   </div>
 
@@ -2656,67 +2753,73 @@ footer .copy{
 
   </div>
 </section>
+
 <style>
-  /* LAB & OFFICE GALLERY — FULLY RESPONSIVE */
+  /* LAB & OFFICE SECTION */
   
   .lab-office-section {
       width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 70px 0;
       box-sizing: border-box;
-      padding: clamp(45px, 7vw, 90px) clamp(16px, 5vw, 7%);
-      background: #ffffff;
       overflow: hidden;
+      background: #ffffff;
   }
   
-/* LEFT-ALIGNED HEADING — SCOPED TO THIS GALLERY ONLY */
-
-.lab-office-section .section-heading {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto 40px;
-    text-align: left;
-}
-
-.lab-office-section .section-tag {
-    display: block;
-    text-align: left;
-}
-
-.lab-office-section .section-heading h2 {
-    text-align: left;
-    margin: 15px 0;
-    font-size: clamp(26px, 4vw, 46px);
-    color: #111827;
-}
-
-.lab-office-section .section-heading p {
-    text-align: left;
-    margin: 0;
-    max-width: 700px;
-    color: #64748b;
-    line-height: 1.8;
-}
- 
+  /* Heading */
+  .lab-office-section .section-heading {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 35px;
+      padding: 0 5%;
+      box-sizing: border-box;
+      text-align: left;
+  }
   
+  .lab-office-section .section-tag {
+      display: block;
+      text-align: left;
+  }
+  
+  .lab-office-section .section-heading h2 {
+      margin: 15px 0;
+      font-size: clamp(26px, 4vw, 46px);
+      color: #111827;
+  }
+  
+  .lab-office-section .section-heading p {
+      max-width: 700px;
+      margin: 0;
+      color: #64748b;
+      line-height: 1.8;
+  }
+  
+  /* Gallery */
   .lab-gallery {
       display: grid;
       width: 100%;
-      max-width: 1250px;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 70px;
+      box-sizing: border-box;
+  
       grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-auto-rows: clamp(180px, 22vw, 270px);
-      gap: clamp(10px, 1.5vw, 20px);
+      gap: 10px;
   }
   
+  /* Gallery Cards */
   .lab-card {
-      position: relative;
-      min-width: 0;
-      min-height: 0;
-      overflow: hidden;
-      border-radius: clamp(10px, 1.5vw, 18px);
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-  }
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 26px;
+    background: #f1f5f9;
+    border: 0;
+    box-shadow: none;
+}
   
   .lab-card-large {
       grid-column: span 2;
@@ -2728,47 +2831,46 @@ footer .copy{
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform .5s ease;
   }
   
   .lab-card:hover img {
-      transform: scale(1.06);
+      transform: scale(1.05);
   }
   
+  /* Image Overlay */
   .lab-overlay {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: clamp(12px, 2vw, 25px);
+      padding: 22px;
       background: linear-gradient(
           to top,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.02)
+          rgba(15, 23, 42, .85),
+          transparent 75%
       );
-      color: #ffffff;
+      color: #fff;
   }
   
   .lab-overlay h3 {
       font-size: clamp(14px, 1.7vw, 19px);
-      line-height: 1.3;
       margin: 0 0 7px;
   }
   
   .lab-overlay p {
-      font-size: clamp(11px, 1.2vw, 13px);
-      line-height: 1.5;
+      font-size: 13px;
       color: #e2e8f0;
       margin: 0;
   }
   
-  /* TABLETS */
-  
+  /* Tablet */
   @media (max-width: 900px) {
       .lab-gallery {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           grid-auto-rows: clamp(170px, 27vw, 230px);
+          padding: 0 16px;
       }
   
       .lab-card-large {
@@ -2777,21 +2879,22 @@ footer .copy{
       }
   }
   
-  /* MOBILE */
-  
+  /* Mobile */
   @media (max-width: 600px) {
       .lab-office-section {
-          padding: 45px 16px;
+          padding: 45px 0;
       }
   
       .lab-office-section .section-heading {
-          margin-bottom: 25px;
+          padding: 0 16px;
+          margin-bottom: 24px;
       }
   
       .lab-gallery {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           grid-auto-rows: clamp(145px, 43vw, 200px);
-          gap: 10px;
+          padding: 0 12px;
+          gap: 6px;
       }
   
       .lab-card-large {
@@ -2800,8 +2903,8 @@ footer .copy{
       }
   
       .lab-card {
-          border-radius: 12px;
-      }
+    border-radius: 12px;
+}
   
       .lab-overlay {
           padding: 12px;
@@ -2816,36 +2919,16 @@ footer .copy{
       }
   }
   
-  /* VERY SMALL MOBILE */
-  
+  /* Small Mobile */
   @media (max-width: 360px) {
-      .lab-office-section {
-          padding-left: 12px;
-          padding-right: 12px;
-      }
-  
       .lab-gallery {
           grid-auto-rows: 140px;
-          gap: 8px;
-      }
-  
-      .lab-overlay h3 {
-          font-size: 12px;
-      }
-  
-      .lab-overlay p {
-          font-size: 9px;
-      }
-  }
-  
-  /* REDUCE ANIMATION FOR ACCESSIBILITY */
-  
-  @media (prefers-reduced-motion: reduce) {
-      .lab-card img {
-          transition: none;
+          padding: 0 10px;
+          gap: 5px;
       }
   }
   </style>
+  
 
 <!-- =========================================================
      FOOTER
@@ -4253,142 +4336,124 @@ document
 
   });
 
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
 
-const menuToggle =
-  document.getElementById(
-    "menuToggle"
+menuToggle.addEventListener("click", function(e) {
+
+  e.stopPropagation();
+
+  const isOpen = mobileNav.classList.toggle("open");
+
+  menuToggle.classList.toggle("open", isOpen);
+
+  menuToggle.setAttribute("aria-expanded", isOpen);
+
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close menu" : "Open menu"
   );
 
+});
 
-const mobileNav =
-  document.getElementById(
-    "mobileNav"
-  );
+/* Mobile dropdowns */
 
+document.querySelectorAll(".mobile-trigger").forEach(trigger => {
 
-menuToggle.addEventListener(
-  "click",
-  e => {
+  trigger.addEventListener("click", function(e) {
 
     e.stopPropagation();
 
+    const id = "mobile" +
+      this.dataset.mobile.charAt(0).toUpperCase() +
+      this.dataset.mobile.slice(1);
 
-    const open =
-      mobileNav.classList.toggle(
-        "open"
-      );
+    const submenu = document.getElementById(id);
 
+    const isOpen = submenu.classList.toggle("open");
 
-    menuToggle.classList.toggle(
-      "open",
-      open
-    );
+    this.classList.toggle("open", isOpen);
 
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      open
-    );
-
-  }
-);
-
-
-/* =========================================================
-   MOBILE DROPDOWNS
-========================================================= */
-
-document
-  .querySelectorAll(".mobile-trigger")
-  .forEach(trigger => {
-
-    trigger.addEventListener(
-      "click",
-      () => {
-
-        const target =
-          document.getElementById(
-            "mobile" +
-            trigger.dataset.mobile
-              .charAt(0)
-              .toUpperCase() +
-            trigger.dataset.mobile.slice(1)
-          );
-
-
-        const open =
-          target.classList.toggle(
-            "open"
-          );
-
-
-        trigger.classList.toggle(
-          "open",
-          open
-        );
-
-      }
-    );
+    this.setAttribute("aria-expanded", isOpen);
 
   });
 
+});
 
-/* =========================================================
-   CLOSE MENUS
-========================================================= */
+/* Close menu */
 
-function closeMenus(){
+function closeMenus() {
 
-  document
-    .querySelectorAll(".nav-item.open")
-    .forEach(
-      x =>
-        x.classList.remove("open")
-    );
+  document.querySelectorAll(".nav-item.open").forEach(item => {
+    item.classList.remove("open");
+  });
 
+  document.querySelectorAll(".nav-trigger").forEach(trigger => {
+    trigger.setAttribute("aria-expanded", "false");
+  });
 
-  document
-    .querySelectorAll(".nav-trigger")
-    .forEach(
-      x =>
-        x.setAttribute(
-          "aria-expanded",
-          "false"
-        )
-    );
+  mobileNav.classList.remove("open");
 
+  menuToggle.classList.remove("open");
 
-  mobileNav.classList.remove(
-    "open"
-  );
+  menuToggle.setAttribute("aria-expanded", "false");
 
+  menuToggle.setAttribute("aria-label", "Open menu");
 
-  menuToggle.classList.remove(
-    "open"
-  );
+  document.querySelectorAll(".mobile-sub.open").forEach(item => {
+    item.classList.remove("open");
+  });
 
-
-  menuToggle.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-
-  document
-    .querySelectorAll(
-      ".mobile-sub.open,.mobile-trigger.open"
-    )
-    .forEach(
-      x =>
-        x.classList.remove("open")
-    );
+  document.querySelectorAll(".mobile-trigger.open").forEach(item => {
+    item.classList.remove("open");
+    item.setAttribute("aria-expanded", "false");
+  });
 
 }
 
+/* Close after clicking a navigation link */
+
+mobileNav.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+    closeMenus();
+  });
+
+});
+
+/* Close when clicking outside */
+
+document.addEventListener("click", function(e) {
+
+  if (!e.target.closest(".nav")) {
+    closeMenus();
+  }
+
+});
+
+/* Close with Escape */
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "Escape") {
+    closeMenus();
+  }
+
+});
+
+/* Close when switching to desktop */
+
+window.addEventListener("resize", function() {
+
+  if (window.innerWidth > 900) {
+    closeMenus();
+  }
+
+});
 
 /* =========================================================
    OUTSIDE CLICK
