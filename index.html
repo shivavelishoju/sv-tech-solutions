@@ -115,28 +115,6 @@
   --onA:#fff;
 }
 
-@media(prefers-color-scheme:dark){
-
-  :root:not([data-theme="light"]){
-    --bg:#070b16;
-    --card:rgba(255,255,255,.05);
-    --solid:#101730;
-    --ink:#f1f4fb;
-    --mute:#97a3bf;
-    --line:rgba(255,255,255,.1);
-  }
-
-}
-
-:root[data-theme="dark"]{
-  --bg:#070b16;
-  --card:rgba(255,255,255,.05);
-  --solid:#101730;
-  --ink:#f1f4fb;
-  --mute:#97a3bf;
-  --line:rgba(255,255,255,.1);
-}
-
 *{
   box-sizing:border-box;
 }
@@ -227,11 +205,11 @@ header{
 }
 
 .sv-mark{
-  width:44px;
-  height:44px;
+  width:40px;
+  height:40px;
   display:inline-grid;
   place-items:center;
-  border-radius:14px;
+  border-radius:12px;
   background:linear-gradient(
     135deg,
     #ff6a2b,
@@ -239,23 +217,14 @@ header{
     #00d1c1
   );
   color:#fff;
-  font:700 17px/1 "Space Grotesk",sans-serif;
+  font:700 16px/1 "Space Grotesk",sans-serif;
   letter-spacing:-1px;
   box-shadow:
     0 0 0 3px rgba(124,92,255,.14),
-    0 8px 24px rgba(124,92,255,.32);
+    0 6px 20px rgba(124,92,255,.28);
   position:relative;
   flex:0 0 auto;
   transition:transform .3s ease;
-}
-
-.sv-mark::after{
-  content:"";
-  position:absolute;
-  inset:-5px;
-  border:1px solid rgba(124,92,255,.32);
-  border-radius:18px;
-  pointer-events:none;
 }
 
 .brand-lockup:hover .sv-mark{
@@ -515,8 +484,8 @@ nav{
 
 .hero{
   position:relative;
-  color:#fff;
-  background:#070b16;
+  color:#0b1220;
+  background:#ffffff;
   padding:130px 0 70px;
   overflow:hidden;
   min-height:100vh;
@@ -542,7 +511,7 @@ nav{
   position:absolute;
   border-radius:50%;
   filter:blur(90px);
-  opacity:.55;
+  opacity:.35;
   animation:float 14s ease-in-out infinite;
   pointer-events:none;
 }
@@ -571,7 +540,7 @@ nav{
   bottom:-120px;
   left:40%;
   animation-delay:-9s;
-  opacity:.35;
+  opacity:.25;
 }
 
 @keyframes float{
@@ -588,12 +557,12 @@ nav{
   inset:0;
   background-image:
     linear-gradient(
-      rgba(255,255,255,.04) 1px,
+      rgba(15,23,42,.03) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255,255,255,.04) 1px,
+      rgba(15,23,42,.03) 1px,
       transparent 1px
     );
   background-size:48px 48px;
@@ -618,10 +587,11 @@ nav{
   align-items:center;
   padding:7px 16px;
   border-radius:99px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
+  background:#f3f5f9;
+  border:1px solid #dce2ec;
   font-size:13px;
   margin-bottom:22px;
+  color:#0b1220;
 }
 
 .pill b{
@@ -646,6 +616,7 @@ h1{
   line-height:1.04;
   margin:0 0 20px;
   letter-spacing:-2px;
+  color:#0b1220;
 }
 
 h1 em{
@@ -653,9 +624,9 @@ h1 em{
   background:
     linear-gradient(
       120deg,
-      #ff9a62,
-      #a995ff 60%,
-      #4ff0e3
+      #ff6a2b,
+      #7c5cff 60%,
+      #00d1c1
     );
   -webkit-background-clip:text;
   background-clip:text;
@@ -663,7 +634,7 @@ h1 em{
 }
 
 .hero p.lead{
-  color:#b9c4de;
+  color:#5d6882;
   font-size:clamp(17px,1.4vw,22px);
   max-width:620px;
   margin:0 0 28px;
@@ -685,78 +656,11 @@ h1 em{
 .stats b{
   display:block;
   font:700 34px "Space Grotesk",sans-serif;
+  color:#0b1220;
 }
 
 .stats small{
-  color:#93a0bd;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.form{
-  padding:26px;
-  border-radius:24px;
-  color:#fff;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.14);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  animation:formFloat 5s ease-in-out infinite;
-}
-
-@keyframes formFloat{
-
-  50%{
-    transform:translateY(-5px);
-  }
-
-}
-
-.form h3{
-  margin:0 0 4px;
-  font-size:22px;
-}
-
-.form p{
-  margin:0 0 16px;
-  color:#a9b5d1;
-  font-size:14px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:13px 15px;
-  margin-bottom:10px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.07);
-  color:#fff;
-  outline:0;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:var(--b);
-  box-shadow:0 0 0 3px rgba(124,92,255,.12);
-}
-
-input::placeholder,
-textarea::placeholder{
-  color:#8794b3;
-}
-
-select option{
-  color:#000;
-}
-
-.form .btn{
-  width:100%;
+  color:#5d6882;
 }
 
 
@@ -1481,9 +1385,10 @@ footer .copy{
   }
 
   .sv-mark{
-    width:40px;
-    height:40px;
-    border-radius:12px;
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    font-size:14px;
   }
 
   .hero{
@@ -1655,70 +1560,41 @@ footer .copy{
 
         <div class="dropdown" role="menu">
 
-          <a
-            href="#projects"
-            onclick="setCat('Robotics')"
-          >
+          <a href="#projects" onclick="setCat('Robotics')">
             <span class="drop-icon">🤖</span>
-            <span class="drop-text">
-              Robotics
-              <small>Arms, robots & automation</small>
-            </span>
+            <span class="drop-text">Robotics<small>Arms & autonomous systems</small></span>
           </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('IoT & ESP32')"
-          >
+          <a href="#projects" onclick="setCat('IoT & Automation')">
             <span class="drop-icon">📡</span>
-            <span class="drop-text">
-              IoT & ESP32
-              <small>Wireless & smart devices</small>
-            </span>
+            <span class="drop-text">IoT & Automation<small>Sensors & smart control</small></span>
           </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Arduino')"
-          >
+          <a href="#projects" onclick="setCat('Electronics')">
             <span class="drop-icon">⚡</span>
-            <span class="drop-text">
-              Arduino
-              <small>Sensors & mini builds</small>
-            </span>
+            <span class="drop-text">Electronics<small>Circuits & testing</small></span>
           </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Software & Web')"
-          >
-            <span class="drop-icon">💻</span>
-            <span class="drop-text">
-              Software & Web
-              <small>Apps & digital tools</small>
-            </span>
+          <a href="#projects" onclick="setCat('Home Automation')">
+            <span class="drop-icon">🏠</span>
+            <span class="drop-text">Home Automation<small>Smart security & control</small></span>
           </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('AI & Vision')"
-          >
+          <a href="#projects" onclick="setCat('AI & Computer Vision')">
             <span class="drop-icon">🧠</span>
-            <span class="drop-text">
-              AI & Vision
-              <small>ML & computer vision</small>
-            </span>
+            <span class="drop-text">AI & Computer Vision<small>ML & visual detection</small></span>
           </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('Hardware & PCB')"
-          >
+          <a href="#projects" onclick="setCat('Assistive Technology')">
+            <span class="drop-icon">🫶</span>
+            <span class="drop-text">Assistive Technology<small>Accessibility solutions</small></span>
+          </a>
+          <a href="#projects" onclick="setCat('Healthcare & Biomedical')">
+            <span class="drop-icon">❤️</span>
+            <span class="drop-text">Healthcare & Biomedical<small>Health monitoring</small></span>
+          </a>
+          <a href="#projects" onclick="setCat('Power Electronics')">
+            <span class="drop-icon">🔌</span>
+            <span class="drop-text">Power Electronics<small>Power conversion</small></span>
+          </a>
+          <a href="#projects" onclick="setCat('Embedded Systems & Hardware')">
             <span class="drop-icon">🔧</span>
-            <span class="drop-text">
-              Hardware & PCB
-              <small>Boards & circuits</small>
-            </span>
+            <span class="drop-text">Embedded Systems & Hardware<small>Microcontrollers & PCBs</small></span>
           </a>
 
         </div>
@@ -1763,22 +1639,11 @@ footer .copy{
 
           <a
             href="#projects"
-            onclick="setCat('Arduino')"
-          >
-            <span class="drop-icon">⚙️</span>
-            <span class="drop-text">
-              Arduino
-              <small>Embedded projects</small>
-            </span>
-          </a>
-
-          <a
-            href="#projects"
-            onclick="setCat('IoT & ESP32')"
+            onclick="setCat('IoT & Automation')"
           >
             <span class="drop-icon">📶</span>
             <span class="drop-text">
-              IoT & ESP32
+              IoT & Automation
               <small>Connected systems</small>
             </span>
           </a>
@@ -1841,11 +1706,14 @@ footer .copy{
     <div class="mobile-sub" id="mobileCategories">
       <div>
         <a href="#projects" onclick="setCat('Robotics')">🤖 Robotics</a>
-        <a href="#projects" onclick="setCat('IoT & ESP32')">📡 IoT & ESP32</a>
-        <a href="#projects" onclick="setCat('Arduino')">⚡ Arduino</a>
-        <a href="#projects" onclick="setCat('Software & Web')">💻 Software & Web</a>
-        <a href="#projects" onclick="setCat('AI & Vision')">🧠 AI & Vision</a>
-        <a href="#projects" onclick="setCat('Hardware & PCB')">🔧 Hardware & PCB</a>
+        <a href="#projects" onclick="setCat('IoT & Automation')">📡 IoT & Automation</a>
+        <a href="#projects" onclick="setCat('Electronics')">⚡ Electronics</a>
+        <a href="#projects" onclick="setCat('Home Automation')">🏠 Home Automation</a>
+        <a href="#projects" onclick="setCat('AI & Computer Vision')">🧠 AI & Computer Vision</a>
+        <a href="#projects" onclick="setCat('Assistive Technology')">🫶 Assistive Technology</a>
+        <a href="#projects" onclick="setCat('Healthcare & Biomedical')">❤️ Healthcare & Biomedical</a>
+        <a href="#projects" onclick="setCat('Power Electronics')">🔌 Power Electronics</a>
+        <a href="#projects" onclick="setCat('Embedded Systems & Hardware')">🔧 Embedded Systems & Hardware</a>
       </div>
     </div>
 
@@ -1859,8 +1727,7 @@ footer .copy{
       <div>
         <a href="#projects" onclick="setCat('All')">✦ All Projects</a>
         <a href="#projects" onclick="setCat('Robotics')">🦾 Robotics</a>
-        <a href="#projects" onclick="setCat('Arduino')">⚙️ Arduino</a>
-        <a href="#projects" onclick="setCat('IoT & ESP32')">📶 IoT & ESP32</a>
+        <a href="#projects" onclick="setCat('IoT & Automation')">📶 IoT & Automation</a>
       </div>
     </div>
 
@@ -1901,7 +1768,7 @@ footer .copy{
  
    .logo.brand-lockup {
      min-width: 0;
-     gap: 0;
+     gap: 9px;
      font-size: 18px;
    }
  
@@ -2048,7 +1915,7 @@ footer .copy{
      justify-content: center;
      margin-top: 10px;
      color: #fff !important;
-     background: linear-gradient(120deg,#ff6a2b,#7c5cff);
+     background: linear-gradient(120deg,#e75516,#7c5cff);
    }
  
  }
@@ -2063,11 +1930,6 @@ footer .copy{
  
    .nav {
      height: 56px;
-   }
- 
-   .sv-mark {
-     width: 36px;
-     height: 36px;
    }
  
  }</style>
@@ -2105,11 +1967,6 @@ footer .copy{
       </span>
 
 
-      <!-- <h1>
-        SV <em>Tech Solutions.</em>
-      </h1> -->
-
-
       <h1>
         Turn your idea into a
         working model.
@@ -2135,6 +1992,7 @@ footer .copy{
         <a
           class="btn ghost"
           href="#enquire"
+          style="color:#0b1220!important;border-color:rgba(15,23,42,.25);"
         >
           Consultation
         </a>
@@ -2696,7 +2554,6 @@ footer .copy{
 <section class="lab-office-section" id="lab-office">
   <div class="section-heading">
     <span class="eyebrow rv">OUR WORKSPACE</span>
-      <!-- <span class="section-tag">OUR WORKSPACE</span> -->
       <h2>Inside Our <span>Lab & Office</span></h2>
       <p>
           Explore the workspace where ideas turn into reality.
@@ -2997,9 +2854,9 @@ footer .copy{
 
         <a
           href="#projects"
-          onclick="setCat('Arduino')"
+          onclick="setCat('IoT & Automation')"
         >
-          Arduino
+          IoT & Automation
         </a>
 
         <a
@@ -3011,16 +2868,16 @@ footer .copy{
 
         <a
           href="#projects"
-          onclick="setCat('IoT & ESP32')"
+          onclick="setCat('Electronics')"
         >
-          IoT &amp; ESP32
+          Electronics
         </a>
 
         <a
           href="#projects"
-          onclick="setCat('Software & Web')"
+          onclick="setCat('Home Automation')"
         >
-          Software
+          Home Automation
         </a>
 
       </div>
@@ -3095,605 +2952,172 @@ const whatsappLink = message =>
 ========================================================= */
 
 const CATS = [
-
-  [
-    "🤖",
-    "Robotics",
-    "Arms, mecanum and delivery robots",
-    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=85"
-  ],
-
-  [
-    "📡",
-    "IoT & ESP32",
-    "Wireless, GPS and smart devices",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
-  ],
-
-  [
-    "⚡",
-    "Arduino",
-    "Sensors, automation and mini builds",
-    "https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=1000&q=85"
-  ],
-
-  [
-    "💻",
-    "Software & Web",
-    "Websites, applications and digital tools",
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85"
-  ],
-
-  [
-    "🧠",
-    "AI & Vision",
-    "Machine learning, computer vision and assistants",
-    "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=85"
-  ],
-
-  [
-    "🔧",
-    "Hardware & PCB",
-    "Custom boards and electronic circuits",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85"
-  ]
-
+  [ "AI", "Robotics", "Robotic arms, mobile robots and autonomous systems", "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=85" ],
+  [ "IOT", "IoT & Automation", "Connected devices, sensors and smart control", "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85" ],
+  [ "CORE", "Electronics", "Electronic circuits, testing and sensor projects", "https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=1000&q=85" ],
+  [ "EMBEDDED", "Home Automation", "Remote appliance control and smart security", "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=85" ],
+  [ "ML", "AI & Computer Vision", "Artificial intelligence and visual detection", "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=85" ],
+  [ "POWER", "Assistive Technology", "Accessibility and gesture-based solutions", "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85" ],
+  [ "❤️", "Healthcare & Biomedical", "Health monitoring and biomedical projects", "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=85" ],
+  [ "🔌", "Power Electronics", "Power conversion and electrical systems", "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=85" ],
+  [ "🔧", "Embedded Systems & Hardware", "Microcontrollers, development boards and PCB design", "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85" ]
 ];
 
 
 /* =========================================================
-   PROJECT DATA
-========================================================= */
-
+   PROJECT DATA 
+   Format: [Category, Icon, Title, Description, Image, Link, Components]
+   ========================================================= */
 const P = [
 
-  [
-    "Robotics",
-    "",
-    "DUM-E 6-Axis Robotic Arm",
-    "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.",
-    "IMG_2819_Original.JPG",
-    "",
-    [
-      "Arduino",
-      "Servo Motors",
-      "Robotics"
-    ]
+  // --- Robotics ---
+  [ "Robotics", "🦾", "DUM-E 6-Axis Robotic Arm", "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.", "IMG_2819_Original.JPG", "",
+    [ "Arduino", "Servo Motors", "Potentiometer" ]
   ],
-  [
-    "Robotics",
-    "",
-    "Bionic Hand",
-    "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.",
-    "EF02E9BF-4A24-4261-AA2E-4B292B1214C6.PNG",
-    "",
-    [
-      "EMG",
-      "Arduino",
-      "Biomedical"
-    ]
+
+  [ "Robotics", "🤝", "Master Slave Robotic Arm", "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.", "FJ1TWJPL5JM74Q3.webp", "",
+    [ "Arduino", "Flex Sensors", "Servo Motors", "Potentiometer" ]
   ],
-  
-  // [
-  //   "IOI & Security",
-  //   "Keypad-Based Door lock-System",
-  //   "Electroics Security System that uses a password entered through a matrix keypad to control an electronic door lock.Provides access using password verification and an lcd status display. ",
-  //   "",
-  //   "",
-  //   [
-  //     "Arduino UNO",
-  //      "4X4 Matrix keypad ",
-  //      "Solenoid Door lock",
-  //      "Relay Module  ",
-  //      "16x2 LCD",
-  //      "Buzzer"
-  //   ]
-  // ],
-  
-  [
-  "IoT & Security",
-  "",
-  "Keypad-Based Door Lock System",
-  "A password-based electronic door lock system using a matrix keypad and LCD display for secure access.",
-   "IMG_4859.JPG",
-  "",
-  [
-    "Arduino Uno",
-    "4x4 Matrix Keypad",
-    "Solenoid Door Lock",
-    "Relay Module",
-    "16x2 LCD",
-    "Buzzer"
+
+  [ "Robotics", "🛞", "Mecanum Robot", "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.", "1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png", "",
+    [ "ESP32-CAM", "Mecanum Wheels", "OpenCV" ]
+  ],
+
+  [ "Robotics", "🤖", "Obstacle Avoidance Robot", "Autonomous robot that detects obstacles using an ultrasonic sensor and automatically changes direction to avoid collisions.", "IMG_4847.JPG", "",
+    [ "Arduino Uno", "Ultrasonic Sensor HC-SR04", "Motor Driver L298N", "DC Motors" ]
+  ],
+
+  [ "Robotics", "🚗", "Line Following Robot", "Autonomous mobile robot that follows a predefined path using infrared sensors and real-time motor control.", "IMG_4850.JPG", "",
+    [ "Arduino Uno", "IR Sensors", "Motor Driver L298N", "DC Motors" ]
+  ],
+
+  [ "Robotics", "🍽️", "Food Delivery Robot", "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.", "3C3F80E5-44D2-4184-B4D9-740C96C6FED6.PNG", "",
+    [ "ESP32", "IR Sensors", "LCD", "DC Motors" ]
+  ],
+
+  // --- IoT & Automation ---
+  [ "IoT & Automation", "🚿", "WiFi-Based Spraying Robot", "Wireless spraying robot controlled through WiFi using a mobile interface, enabling remote movement and controlled liquid spraying for agricultural applications.", "IMG_4853.JPG", "",
+    [ "ESP32", "WiFi Control", "Water Pump", "Motor Driver" ]
+  ],
+
+  [ "IoT & Automation", "🔥", "Fire and Smoke Detection System", "Smart fire and smoke monitoring system that detects smoke and abnormal temperature, activates an alarm and sends real-time alerts to users.", "IMG_4865.JPG", "",
+    [ "ESP32", "MQ-2 Smoke Sensor", "Flame Sensor", "Temperature Sensor", "Buzzer" ]
+  ],
+
+  [ "IoT & Automation", "🌱", "Automatic Plant Watering System", "Smart irrigation system that monitors soil moisture and automatically activates a water pump when plants need watering.", "IMG_4849.JPG", "",
+    [ "ESP32", "Soil Moisture Sensor", "Relay Module", "Water Pump" ]
+  ],
+
+  [ "IoT & Automation", "🗑️", "Smart Dustbin", "Automatic waste bin that detects nearby objects and opens its lid using an ultrasonic sensor and servo motor.", "IMG_4863.JPG", "",
+    [ "Arduino Uno", "Ultrasonic Sensor", "Servo Motor", "Waste Detection" ]
+  ],
+
+  [ "IoT & Automation", "🪪", "RFID-Based Attendance System", "Smart attendance system that identifies users through RFID cards and records attendance with date and time.", "maxresdefault.jpg", "",
+    [ "ESP32", "RFID RC522", "LCD Display", "Wi-Fi", "Database" ]
+  ],
+
+  [ "IoT & Automation", "💧", "Water Level Monitoring System", "Smart water tank monitoring system that measures water levels and provides automatic motor control and overflow alerts.", "IMG_4864.JPG", "",
+    [ "ESP32", "Ultrasonic Sensor", "Relay Module", "Water Pump", "Wi-Fi" ]
+  ],
+
+  [ "IoT & Automation", "🧯", "Gas Leakage Detection System", "Gas monitoring system that detects LPG leakage and activates an alarm with optional mobile notifications.", "IMG_4865.JPG", "",
+    [ "ESP32", "MQ-2 Gas Sensor", "Buzzer", "LCD Display", "Wi-Fi" ]
+  ],
+
+  [ "IoT & Automation", "🌦️", "IoT Weather Monitoring Station", "Connected weather station that measures temperature, humidity, atmospheric pressure and environmental conditions.", "IMG_4866.JPG", "",
+    [ "ESP32", "DHT11 / DHT22", "BMP280", "OLED Display", "Cloud Dashboard" ]
+  ],
+
+  [ "IoT & Automation", "📹", "ESP32 Surveillance Robot", "A Wi-Fi-based surveillance robot with live video streaming, wireless mobile control, obstacle detection and remote monitoring.", "esp32.JPG", "",
+    [ "ESP32-CAM", "DC Motors", "Mecanum wheels", "Motor Driver" ]
+  ],
+
+  [ "IoT & Automation", "🌡️", "IoT Temperature & Humidity Monitoring & Control System using ESP32", "An ESP32-based IoT system that monitors real-time temperature and humidity levels using a sensor.", "IoT-Temperature-Humidity-Monitoring-Control-System-using-ESP32-Blynk-780x470.webp", "",
+    [ "ESP32 Development Board", "DHT11 / DHT22 Temperature & Humidity Sensor", "Relay Module", "Cooling Fan", "Power Supply", "IoT Dashboard" ]
+  ],
+
+  [ "IoT & Automation", "🎙️", "Speech Recognition System for Voice-Controlled Embedded Applications using ESP32", "ESP32-based voice control system that uses mobile Wi-Fi commands to operate electronic devices.", "voice-control-automation-using-inmp441-i2s-module-and-esp32-v0-jq1l6wn1ytph1.webp", "",
+    [ "ESP32 Development Board", "Smartphone with Voice Recognition", "Wi-Fi Communication", "Relay Module" ]
+  ],
+
+  [ "IoT & Automation", "🗺️", "GPS Map Navigator", "ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.", "https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp", "",
+    [ "ESP32", "GPS", "Maps API" ]
+  ],
+
+  // --- Electronics ---
+  [ "Electronics", "⚡", "Wireless AC Tester", "Wireless AC voltage detection and indication system designed to identify the presence of AC voltage and provide a visual or wireless alert.", "IMG_2122_Original.JPG", "",
+    [ "AC Voltage Sensor", "ESP32", "Wireless Communication", "LED Indicator" ]
+  ],
+
+  [ "Electronics", "🔬", "Transistor Tester", "Electronic testing device designed to identify transistor types and check component terminals and basic operating characteristics.", "IMG_0714_Original.JPG", "",
+    [ "Arduino Uno", "NPN Transistor", "PNP Transistor", "16x2 LCD" ]
+  ],
+
+  // --- Home Automation ---
+  [ "Home Automation", "🔐", "Keypad-Based Door Lock System", "A password-based electronic door lock system using a matrix keypad and LCD display for secure access.", "IMG_4859.JPG", "",
+    [ "Arduino Uno", "4x4 Matrix Keypad", "Solenoid Door Lock", "Relay Module", "16x2 LCD", "Buzzer" ]
+  ],
+
+  [ "Home Automation", "🏠", "Bluetooth Home Automation", "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.", "automation.png", "",
+    [ "Arduino Uno", "HC-05", "Relay", "DHT11" ]
+  ],
+
+  [ "Home Automation", "📺", "IR-Based Home Automation using Arduino", "IR-based home automation system that controls electrical appliances wirelessly using an IR remote and relay module.", "IR home .png", "",
+    [ "Arduino Uno / ESP32 Development Board", "IR Receiver Sensor (VS1838B)", "IR Remote Control", "4-Channel Relay Module" ]
+  ],
+
+  // --- AI & Computer Vision ---
+  [ "AI & Computer Vision", "🐾", "ESP32 C3 AI Bot", "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.", "bot.jpg", "",
+    [ "ESP32", "Voice Control", "Wi-Fi" ]
+  ],
+
+  [ "AI & Computer Vision", "🚗", "Zone Based ADAS", "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.", "IMG_4858.jpg", "",
+    [ "Python", "OpenCV", "Computer Vision" ]
+  ],
+
+  // --- Assistive Technology ---
+  [ "Assistive Technology", "🖐️", "Bionic Hand", "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.", "EF02E9BF-4A24-4261-AA2E-4B292B1214C6.PNG", "",
+    [ "EMG Sensor", "Arduino", "Servo Motors" ]
+  ],
+
+  [ "Assistive Technology", "🧤", "Sign Language to Text Conversion Using Flex Sensor", "A wearable glove-based system that uses flex sensors to detect finger movements and converts recognized sign gestures into text using a microcontroller.", "images.jpeg", "",
+    [ "Arduino Uno / ESP32", "Flex Sensors", "Glove", "Resistors", "LCD Display", "Jumper Wires", "Power Supply" ]
+  ],
+
+  [ "Assistive Technology", "🚁", "Obstacle Detection Smart Walking Stick", "Assistive walking stick that detects nearby obstacles and alerts users through vibration and buzzer feedback.", "IMG_4867.JPG", "",
+    [ "Arduino Nano", "Ultrasonic Sensor", "Vibration Motor", "Buzzer", "Battery" ]
+  ],
+
+  // --- Healthcare & Biomedical ---
+  [ "Healthcare & Biomedical", "❤️", "Heart Rate Monitoring System", "Real-time heart rate monitoring system that measures pulse rate using a heart rate sensor and displays BPM readings on an LCD or mobile dashboard.", "IMG_4855.JPG", "",
+    [ "ESP32", "MAX30102 Heart Rate Sensor", "OLED Display", "Wi-Fi", "BPM Monitoring" ]
+  ],
+
+  [ "Healthcare & Biomedical", "💊", "Smart Medicine Reminder", "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.", "clock.png", "",
+    [ "Arduino", "RTC", "LCD", "Buzzer" ]
+  ],
+
+  // --- Power Electronics ---
+  [ "Power Electronics", "🔌", "12V DC to 220V AC Inverter", "DC-to-AC power conversion system that converts a 12V DC input into approximately 220V AC output using an inverter circuit.", "IMG_4851.JPG", "",
+    [ "12V Battery", "MOSFET", "Transformer", "Oscillator Circuit" ]
+  ],
+
+  // --- Embedded Systems & Hardware ---
+  [ "Embedded Systems & Hardware", "🖱️", "Air Mouse", "Motion-controlled wireless mouse that uses hand movements and an inertial sensor to control the computer cursor without a physical mouse.", "airmouse.png", "",
+    [ "ESP32-C3", "MPU6050", "Bluetooth HID", "Wireless Control" ]
+  ],
+
+  [ "Embedded Systems & Hardware", "🎮", "AirPad Wireless Controller", "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.", "airpad.png", "",
+    [ "ESP32", "MPU6050", "Bluetooth HID" ]
+  ],
+
+  [ "Embedded Systems & Hardware", "🔧", "ESP32 Development Board", "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.", "si.png", "",
+    [ "ESP32", "PCB Design", "IoT" ]
   ]
-],
-
-  [
-    "Robotics",
-    "",
-    "Master Slave Robotic Arm",
-    "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.",
-    "FJ1TWJPL5JM74Q3.webp",
-    "",
-    [
-      "Arduino",
-      "Flex Sensors",
-      "Servo Motors"
-    ]
-  ],
-
-  [
-    "Robotics",
-    "",
-    "Mecanum Robot",
-    "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.",
-    "1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png",
-    "",
-    [
-      "ESP32-CAM",
-      "Mecanum Wheels",
-      "OpenCV"
-    ]
-  ],
-
-  [
-    "Robotics",
-    "",
-    "Obstacle Avoidance Robot",
-    "Autonomous robot that detects obstacles using an ultrasonic sensor and automatically changes direction to avoid collisions.",
-    "IMG_4847.JPG",
-    "",
-    [
-      "Arduino Uno",
-      "Ultrasonic Sensor HC-SR04",
-      "Motor Driver L298N",
-      "DC Motors"
-    ]
-  ],
-
-  [
-    "Robotics",
-    "",
-    "Line Following Robot",
-    "Autonomous mobile robot that follows a predefined path using infrared sensors and real-time motor control.",
-    "IMG_4850.JPG",
-    "",
-    [
-      "Arduino Uno",
-      "IR Sensors",
-      "Motor Driver L298N",
-      "DC Motors"
-    ]
-  ],
-
-  [
-    "IoT",
-    "",
-    "WiFi-Based Spraying Robot",
-    "Wireless spraying robot controlled through WiFi using a mobile interface, enabling remote movement and controlled liquid spraying for agricultural applications.",
-    "IMG_4853.JPG",
-    "",
-    [
-      "ESP32",
-      "WiFi Control",
-      "Water Pump",
-      "Motor Driver"
-    ]
-  ],
-  [
-  "IoT & Safety",
-  "",
-  "Fire and Smoke Detection System",
-  "Smart fire and smoke monitoring system that detects smoke and abnormal temperature, activates an alarm and sends real-time alerts to users.",
-  "IMG_4865.JPG",
-  "",
-  [
-    "ESP32",
-    "MQ-2 Smoke Sensor",
-    "Flame Sensor",
-    "Temperature Sensor",
-    "Buzzer"
-  ]
-],
-
-[
-  "Healthcare & IoT",
-  "",
-  "Heart Rate Monitoring System",
-  "Real-time heart rate monitoring system that measures pulse rate using a heart rate sensor and displays BPM readings on an LCD or mobile dashboard.",
-  "IMG_4855.JPG",
-  "",
-  [
-    "ESP32",
-    "MAX30102 Heart Rate Sensor",
-    "OLED Display",
-    "Wi-Fi",
-    "BPM Monitoring"
-  ]
-],
-
-  [
-    "IoT",
-    "",
-    "Automatic Plant Watering System",
-    "Smart irrigation system that monitors soil moisture and automatically activates a water pump when plants need watering.",
-    "IMG_4849.JPG",
-    "",
-    [
-      "ESP32",
-      "Soil Moisture Sensor",
-      "Relay Module",
-      "Water Pump"
-    ]
-  ],
-
-  [
-    "Electronics",
-    "",
-    "Wireless AC Tester",
-    "Wireless AC voltage detection and indication system designed to identify the presence of AC voltage and provide a visual or wireless alert.",
-    "IMG_2122_Original.JPG",
-    "",
-    [
-      "AC Voltage Sensor",
-      "ESP32",
-      "Wireless Communication",
-      "LED Indicator"
-    ]
-  ],
-
-  [
-    "Power Electronics",
-    "",
-    "12V DC to 220V AC Inverter",
-    "DC-to-AC power conversion system that converts a 12V DC input into approximately 220V AC output using an inverter circuit.",
-    "IMG_4851.JPG",
-    "",
-    [
-      "12V Battery",
-      "MOSFET",
-      "Transformer",
-      "Oscillator Circuit"
-    ]
-  ],
-
-  [
-    "Electronics",
-    "",
-    "Transistor Tester",
-    "Electronic testing device designed to identify transistor types and check component terminals and basic operating characteristics.",
-    "IMG_0714_Original.JPG",
-    "",
-    [
-      "Arduino Uno",
-      "NPN Transistor",
-      "PNP Transistor",
-      "16x2 LCD"
-    ]
-  ],
-
-  [
-    "IoT",
-    "",
-    "Air Mouse",
-    "Motion-controlled wireless mouse that uses hand movements and an inertial sensor to control the computer cursor without a physical mouse.",
-    "airmouse.png",
-    "",
-    [
-      "ESP32-C3",
-      "MPU6050",
-      "Bluetooth HID",
-      "Wireless Control"
-    ]
-  ],
-
-  [
-    "Robotics",
-    "",
-    "Food Delivery Robot",
-    "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.",
-    "3C3F80E5-44D2-4184-B4D9-740C96C6FED6.PNG",
-    "",
-    [
-      "ESP32",
-      "IR Sensors",
-      "LCD",
-      "DC Motors"
-    ]
-  ],
-
-  [
-    "IoT & ESP32",
-    "",
-    "AirPad Wireless Controller",
-    "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.",
-    "airpad.png",
-    "",
-    [
-      "ESP32",
-      "MPU6050",
-      "Bluetooth HID"
-    ]
-  ],
-
-  [
-    "Hardware & PCB",
-    "",
-    "ESP32 Development Board",
-    "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.",
-    "si.png",
-    "",
-    [
-      "ESP32",
-      "PCB Design",
-      "IoT"
-    ]
-  ],
-
-  [
-    "AI & Vision",
-    "",
-    "ESP32 C3 AI Bot",
-    "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.",
-    "bot.jpg",
-    "",
-    [
-      "ESP32",
-      "Voice Control",
-      "Wi-Fi"
-    ]
-  ],
-
-  [
-    "AI & Vision",
-    "",
-    "Zone Based ADAS",
-    "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.",
-    "IMG_4858.jpg",
-    "",
-    [
-      "Python",
-      "OpenCV",
-      "Computer Vision"
-    ]
-  ],
-
-  [
-    "IoT & ESP32",
-    "",
-    "GPS Map Navigator",
-    "ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.",
-    "https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp",
-    "",
-    [
-      "ESP32",
-      "GPS",
-      "Maps API"
-    ]
-  ],
-
-  [
-    "Arduino",
-    "",
-    "Smart Medicine Reminder",
-    "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.",
-    "clock.png",
-    "",
-    [
-      "Arduino",
-      "RTC",
-      "LCD",
-      "Buzzer"
-    ]
-  ],
-
-  [
-    "Arduino",
-    "",
-    "Bluetooth Home Automation",
-    "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.",
-    "automation.png",
-    "",
-    [
-      "Arduino Uno",
-      "HC-05",
-      "Relay",
-      "DHT11"
-    ]
-  ],
-  [
-  "IoT & Automation",
-  "",
-  "Smart Dustbin",
-  "Automatic waste bin that detects nearby objects and opens its lid using an ultrasonic sensor and servo motor.",
-  "IMG_4863.JPG",
-  "",
-  [
-    "Arduino Uno",
-    "Ultrasonic Sensor",
-    "Servo Motor",
-    "Waste Detection"
-  ]
-],
-
-[
-  "IoT & Security",
-  "",
-  "RFID-Based Attendance System",
-  "Smart attendance system that identifies users through RFID cards and records attendance with date and time.",
-  "maxresdefault.jpg",
-  "",
-  [
-    "ESP32",
-    "RFID RC522",
-    "LCD Display",
-    "Wi-Fi",
-    "Database"
-  ]
-],
-
-[
-  "IoT",
-  "",
-  "Water Level Monitoring System",
-  "Smart water tank monitoring system that measures water levels and provides automatic motor control and overflow alerts.",
-  "IMG_4864.JPG",
-  "",
-  [
-    "ESP32",
-    "Ultrasonic Sensor",
-    "Relay Module",
-    "Water Pump",
-    "Wi-Fi"
-  ]
-],
-
-[
-  "IoT & Safety",
-  "",
-  "Gas Leakage Detection System",
-  "Gas monitoring system that detects LPG leakage and activates an alarm with optional mobile notifications.",
-  "IMG_4865.JPG",
-  "",
-  [
-    "ESP32",
-    "MQ-2 Gas Sensor",
-    "Buzzer",
-    "LCD Display",
-    "Wi-Fi"
-  ]
-],
-
-// [
-//   "IoT & Automation",
-//   "🚗",
-//   "Smart Parking System",
-//   "Automated parking management system that detects available parking slots and displays real-time availability.",
-//   "",
-//   "",
-//   [
-//     "ESP32",
-//     "IR Sensors",
-//     "Servo Motor",
-//     "LCD Display",
-//     "IoT Dashboard"
-//   ]
-// ],
-
-// [
-//   "Electronics",
-//   "⚡",
-//   "Smart Energy Meter",
-//   "Electricity monitoring system that measures voltage, current and power consumption and displays energy usage.",
-//   "",
-//   "",
-//   [
-//     "ESP32",
-//     "Voltage Sensor",
-//     "Current Sensor",
-//     "LCD Display",
-//     "Energy Monitoring"
-//   ]
-// ],
-
-[
-  "IoT & Environment",
-  "",
-  "IoT Weather Monitoring Station",
-  "Connected weather station that measures temperature, humidity, atmospheric pressure and environmental conditions.",
-  "IMG_4866.JPG",
-  "",
-  [
-    "ESP32",
-    "DHT11 / DHT22",
-    "BMP280",
-    "OLED Display",
-    "Cloud Dashboard"
-  ]
-],
-
-// [
-//   "Robotics",
-//   "",
-//   "Gesture-Controlled Robot",
-//   "Wireless robot controlled through hand gestures using an accelerometer or gyroscope sensor.",
-//   "",
-//   "",
-//   [
-//     "ESP32",
-//     "MPU6050",
-//     "Bluetooth",
-//     "Motor Driver",
-//     "DC Motors"
-//   ]
-// ],
-
-// [
-//   "IoT & Automation",
-//   "💡",
-//   "Automatic Street Light System",
-//   "Intelligent street lighting system that automatically controls lights according to surrounding brightness and movement.",
-//   "",
-//   "",
-//   [
-//     "Arduino Uno",
-//     "LDR Sensor",
-//     "PIR Sensor",
-//     "Relay Module",
-//     "LED Lights"
-//   ]
-// ],
-
-// [
-//   "AI & Vision",
-//   "👁️",
-//   "Face Recognition Door Access System",
-//   "Computer vision-based security system that identifies registered faces and controls authorized door access.",
-//   "",
-//   "",
-//   [
-//     "ESP32-CAM",
-//     "Python",
-//     "OpenCV",
-//     "Face Recognition",
-//     "Relay Module"
-//   ]
-// ],
-
-// [
-//   "IoT & Agriculture",
-//   "🌾",
-//   "Smart Agriculture Monitoring System",
-//   "IoT-based agriculture system that monitors soil moisture, temperature and humidity to support smart farming.",
-//   "",
-//   "",
-//   [
-//     "ESP32",
-//     "Soil Moisture Sensor",
-//     "DHT22",
-//     "Relay Module",
-//     "Cloud Monitoring"
-//   ]
-// ],
-
-[
-  "Robotics",
-  "",
-  "Obstacle Detection Smart Walking Stick",
-  "Assistive walking stick that detects nearby obstacles and alerts users through vibration and buzzer feedback.",
-  "IMG_4867.JPG",
-  "",
-  [
-    "Arduino Nano",
-    "Ultrasonic Sensor",
-    "Vibration Motor",
-    "Buzzer",
-    "Battery"
-  ]
-]
-
-
 
 ];
+
+
 /* =========================================================
    STATE
 ========================================================= */
@@ -3764,7 +3188,7 @@ const categoryClasses = [
 
 document.getElementById("cats").innerHTML =
 
-  CATS.map((c,i) => `
+  CATS.slice(0, 6).map((c,i) => `
 
     <a
       class="tile glass rv ${categoryClasses[i]}"
@@ -4635,6 +4059,7 @@ header, nav, main, section, footer, .hero, .lab-office-section {
 .hero .btn.ghost:hover { background: #eef1f6 !important; }
 .hero::after { opacity: .18; }
 </style>
+
 
 </body>
 
