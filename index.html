@@ -3053,155 +3053,210 @@ const CATS = [
    PROJECT DATA 
    Format: [Category, Icon, Title, Description, Image, Link, Components]
    ========================================================= */
-const P = [
 
-  // --- Robotics ---
-  [ "Robotics", "🦾", "DUM-E 6-Axis Robotic Arm", "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.", "IMG_2819_Original.JPG", "",
-    [ "Arduino", "Servo Motors", "Potentiometer" ]
-  ],
+   const P = [
 
-  [ "Robotics", "🤝", "Master Slave Robotic Arm", "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.", "FJ1TWJPL5JM74Q3.webp", "",
-    [ "Arduino", "Flex Sensors", "Servo Motors", "Potentiometer" ]
-  ],
+// =====================================================
+// ROBOTICS
+// =====================================================
 
-  [ "Robotics", "🛞", "Mecanum Robot", "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.", "1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png", "",
-    [ "ESP32-CAM", "Mecanum Wheels", "OpenCV" ]
-  ],
+[ "Robotics", "🦾", "DUM-E 6-Axis Robotic Arm", "Six-axis robotic arm inspired by Iron Man’s DUM-E, built with Arduino and servo motors for pick-and-place tasks.", "IMG_2819_Original.JPG", "",
+  [ "Arduino", "Servo Motors", "Potentiometer" ]
+],
 
-  [ "Robotics", "🤖", "Obstacle Avoidance Robot", "Autonomous robot that detects obstacles using an ultrasonic sensor and automatically changes direction to avoid collisions.", "IMG_4847.JPG", "",
-    [ "Arduino Uno", "Ultrasonic Sensor HC-SR04", "Motor Driver L298N", "DC Motors" ]
-  ],
+[ "Robotics", "🤝", "Master Slave Robotic Arm", "Arduino robotic arm that copies human hand movement in real time using flex sensors and servo motors.", "FJ1TWJPL5JM74Q3.webp", "",
+  [ "Arduino", "Flex Sensors", "Servo Motors", "Potentiometer" ]
+],
 
-  [ "Robotics", "🚗", "Line Following Robot", "Autonomous mobile robot that follows a predefined path using infrared sensors and real-time motor control.", "IMG_4850.JPG", "",
-    [ "Arduino Uno", "IR Sensors", "Motor Driver L298N", "DC Motors" ]
-  ],
+[ "Robotics", "", "Arduino Mini CNC Plotter", "Arduino-based mini CNC plotter that uses three 28BYJ-48 stepper motors controlled by ULN2003 driver boards for movement and pen positioning. It draws designs, images and patterns using G-code.", "CNC.png", "",
+  [ "Arduino Nano", "3 × ULN2003AN Driver Boards", "3 × 28BYJ-48 Stepper Motors" ]
+],
 
-  [ "Robotics", "🍽️", "Food Delivery Robot", "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.", "3C3F80E5-44D2-4184-B4D9-740C96C6FED6.PNG", "",
-    [ "ESP32", "IR Sensors", "LCD", "DC Motors" ]
-  ],
+[ "Robotics", "🛞", "Mecanum Robot", "ESP32-CAM omni-directional robot with live video, Bluetooth and voice control, obstacle avoidance and line following.", "1185c476-1e28-4e75-b7c7-dbd6b84b6fdd.png", "",
+  [ "ESP32-CAM", "Mecanum Wheels", "OpenCV" ]
+],
 
-  // --- IoT & Automation ---
-  [ "IoT & Automation", "🚿", "WiFi-Based Spraying Robot", "Wireless spraying robot controlled through WiFi using a mobile interface, enabling remote movement and controlled liquid spraying for agricultural applications.", "IMG_4853.JPG", "",
-    [ "ESP32", "WiFi Control", "Water Pump", "Motor Driver" ]
-  ],
+[ "Robotics", "🤖", "Obstacle Avoidance Robot", "Autonomous robot that detects obstacles using an ultrasonic sensor and automatically changes direction to avoid collisions.", "IMG_4847.JPG", "",
+  [ "Arduino Uno", "Ultrasonic Sensor HC-SR04", "Motor Driver L298N", "DC Motors" ]
+],
 
-  [ "IoT & Automation", "🔥", "Fire and Smoke Detection System", "Smart fire and smoke monitoring system that detects smoke and abnormal temperature, activates an alarm and sends real-time alerts to users.", "IMG_4865.JPG", "",
-    [ "ESP32", "MQ-2 Smoke Sensor", "Flame Sensor", "Temperature Sensor", "Buzzer" ]
-  ],
+[ "Robotics", "🚗", "Line Following Robot", "Autonomous mobile robot that follows a predefined path using infrared sensors and real-time motor control.", "IMG_4850.JPG", "",
+  [ "Arduino Uno", "IR Sensors", "Motor Driver L298N", "DC Motors" ]
+],
 
-  [ "IoT & Automation", "🌱", "Automatic Plant Watering System", "Smart irrigation system that monitors soil moisture and automatically activates a water pump when plants need watering.", "IMG_4849.JPG", "",
-    [ "ESP32", "Soil Moisture Sensor", "Relay Module", "Water Pump" ]
-  ],
+[ "Robotics", "🍽️", "Food Delivery Robot", "Autonomous indoor delivery robot on ESP32 with IR line following, obstacle detection and an LCD status display.", "3C3F80E5-44D2-4184-B4D9-740C96C6FED6.PNG", "",
+  [ "ESP32", "IR Sensors", "LCD", "DC Motors" ]
+],
 
-  [ "IoT & Automation", "🗑️", "Smart Dustbin", "Automatic waste bin that detects nearby objects and opens its lid using an ultrasonic sensor and servo motor.", "IMG_4863.JPG", "",
-    [ "Arduino Uno", "Ultrasonic Sensor", "Servo Motor", "Waste Detection" ]
-  ],
 
-  [ "IoT & Automation", "🪪", "RFID-Based Attendance System", "Smart attendance system that identifies users through RFID cards and records attendance with date and time.", "maxresdefault.jpg", "",
-    [ "ESP32", "RFID RC522", "LCD Display", "Wi-Fi", "Database" ]
-  ],
+// =====================================================
+// IoT & AUTOMATION
+// =====================================================
 
-  [ "IoT & Automation", "💧", "Water Level Monitoring System", "Smart water tank monitoring system that measures water levels and provides automatic motor control and overflow alerts.", "IMG_4864.JPG", "",
-    [ "ESP32", "Ultrasonic Sensor", "Relay Module", "Water Pump", "Wi-Fi" ]
-  ],
+[ "IoT & Automation", "🚿", "WiFi-Based Spraying Robot", "Wireless spraying robot controlled through WiFi using a mobile interface, enabling remote movement and controlled liquid spraying for agricultural applications.", "IMG_4853.JPG", "",
+  [ "ESP32", "WiFi Control", "Water Pump", "Motor Driver" ]
+],
 
-  [ "IoT & Automation", "🧯", "Gas Leakage Detection System", "Gas monitoring system that detects LPG leakage and activates an alarm with optional mobile notifications.", "IMG_4865.JPG", "",
-    [ "ESP32", "MQ-2 Gas Sensor", "Buzzer", "LCD Display", "Wi-Fi" ]
-  ],
+[ "IoT & Automation", "🔥", "Fire and Smoke Detection System", "Smart fire and smoke monitoring system that detects smoke and abnormal temperature, activates an alarm and sends real-time alerts to users.", "IMG_4865.JPG", "",
+  [ "ESP32", "MQ-2 Smoke Sensor", "Flame Sensor", "Temperature Sensor", "Buzzer" ]
+],
 
-  [ "IoT & Automation", "🌦️", "IoT Weather Monitoring Station", "Connected weather station that measures temperature, humidity, atmospheric pressure and environmental conditions.", "IMG_4866.JPG", "",
-    [ "ESP32", "DHT11 / DHT22", "BMP280", "OLED Display", "Cloud Dashboard" ]
-  ],
+[ "IoT & Automation", "🌱", "Automatic Plant Watering System", "Smart irrigation system that monitors soil moisture and automatically activates a water pump when plants need watering.", "IMG_4849.JPG", "",
+  [ "ESP32", "Soil Moisture Sensor", "Relay Module", "Water Pump" ]
+],
 
-  [ "IoT & Automation", "📹", "ESP32 Surveillance Robot", "A Wi-Fi-based surveillance robot with live video streaming, wireless mobile control, obstacle detection and remote monitoring.", "esp32.JPG", "",
-    [ "ESP32-CAM", "DC Motors", "Mecanum wheels", "Motor Driver" ]
-  ],
+[ "IoT & Automation", "🗑️", "Smart Dustbin", "Automatic waste bin that detects nearby objects and opens its lid using an ultrasonic sensor and servo motor.", "IMG_4863.JPG", "",
+  [ "Arduino Uno", "Ultrasonic Sensor", "Servo Motor", "Waste Detection" ]
+],
 
-  [ "IoT & Automation", "🌡️", "IoT Temperature & Humidity Monitoring & Control System using ESP32", "An ESP32-based IoT system that monitors real-time temperature and humidity levels using a sensor.", "IoT-Temperature-Humidity-Monitoring-Control-System-using-ESP32-Blynk-780x470.webp", "",
-    [ "ESP32 Development Board", "DHT11 / DHT22 Temperature & Humidity Sensor", "Relay Module", "Cooling Fan", "Power Supply", "IoT Dashboard" ]
-  ],
+[ "IoT & Automation", "🪪", "RFID-Based Attendance System", "Smart attendance system that identifies users through RFID cards and records attendance with date and time.", "maxresdefault.jpg", "",
+  [ "ESP32", "RFID RC522", "LCD Display", "Wi-Fi", "Database" ]
+],
 
-  [ "IoT & Automation", "🎙️", "Speech Recognition System for Voice-Controlled Embedded Applications using ESP32", "ESP32-based voice control system that uses mobile Wi-Fi commands to operate electronic devices.", "voice-control-automation-using-inmp441-i2s-module-and-esp32-v0-jq1l6wn1ytph1.webp", "",
-    [ "ESP32 Development Board", "Smartphone with Voice Recognition", "Wi-Fi Communication", "Relay Module" ]
-  ],
+[ "IoT & Automation", "💧", "Water Level Monitoring System", "Smart water tank monitoring system that measures water levels and provides automatic motor control and overflow alerts.", "IMG_4864.JPG", "",
+  [ "ESP32", "Ultrasonic Sensor", "Relay Module", "Water Pump", "Wi-Fi" ]
+],
 
-  [ "IoT & Automation", "🗺️", "GPS Map Navigator", "ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.", "https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp", "",
-    [ "ESP32", "GPS", "Maps API" ]
-  ],
+[ "IoT & Automation", "🧯", "Gas Leakage Detection System", "Gas monitoring system that detects LPG leakage and activates an alarm with optional mobile notifications.", "IMG_4865.JPG", "",
+  [ "ESP32", "MQ-2 Gas Sensor", "Buzzer", "LCD Display", "Wi-Fi" ]
+],
 
-  // --- Electronics ---
-  [ "Electronics", "⚡", "Wireless AC Tester", "Wireless AC voltage detection and indication system designed to identify the presence of AC voltage and provide a visual or wireless alert.", "IMG_2122_Original.JPG", "",
-    [ "AC Voltage Sensor", "ESP32", "Wireless Communication", "LED Indicator" ]
-  ],
+[ "IoT & Automation", "🌦️", "IoT Weather Monitoring Station", "Connected weather station that measures temperature, humidity, atmospheric pressure and environmental conditions.", "IMG_4866.JPG", "",
+  [ "ESP32", "DHT11 / DHT22", "BMP280", "OLED Display", "Cloud Dashboard" ]
+],
 
-  [ "Electronics", "🔬", "Transistor Tester", "Electronic testing device designed to identify transistor types and check component terminals and basic operating characteristics.", "IMG_0714_Original.JPG", "",
-    [ "Arduino Uno", "NPN Transistor", "PNP Transistor", "16x2 LCD" ]
-  ],
+[ "IoT & Automation", "📹", "ESP32 Surveillance Robot", "A Wi-Fi-based surveillance robot with live video streaming, wireless mobile control, obstacle detection and remote monitoring.", "esp32.JPG", "",
+  [ "ESP32-CAM", "DC Motors", "Mecanum wheels", "Motor Driver" ]
+],
 
-  // --- Home Automation ---
-  [ "Home Automation", "🔐", "Keypad-Based Door Lock System", "A password-based electronic door lock system using a matrix keypad and LCD display for secure access.", "IMG_4859.JPG", "",
-    [ "Arduino Uno", "4x4 Matrix Keypad", "Solenoid Door Lock", "Relay Module", "16x2 LCD", "Buzzer" ]
-  ],
+[ "IoT & Automation", "🌡️", "IoT Temperature & Humidity Monitoring & Control System using ESP32", "An ESP32-based IoT system that monitors real-time temperature and humidity levels using a sensor.", "IoT-Temperature-Humidity-Monitoring-Control-System-using-ESP32-Blynk-780x470.webp", "",
+  [ "ESP32 Development Board", "DHT11 / DHT22 Temperature & Humidity Sensor", "Relay Module", "Cooling Fan", "Power Supply", "IoT Dashboard" ]
+],
 
-  [ "Home Automation", "🏠", "Bluetooth Home Automation", "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.", "automation.png", "",
-    [ "Arduino Uno", "HC-05", "Relay", "DHT11" ]
-  ],
+[ "IoT & Automation", "🎙️", "Speech Recognition System for Voice-Controlled Embedded Applications using ESP32", "ESP32-based voice control system that uses mobile Wi-Fi commands to operate electronic devices.", "voice-control-automation-using-inmp441-i2s-module-and-esp32-v0-jq1l6wn1ytph1.webp", "",
+  [ "ESP32 Development Board", "Smartphone with Voice Recognition", "Wi-Fi Communication", "Relay Module" ]
+],
 
-  [ "Home Automation", "📺", "IR-Based Home Automation using Arduino", "IR-based home automation system that controls electrical appliances wirelessly using an IR remote and relay module.", "IR home .png", "",
-    [ "Arduino Uno / ESP32 Development Board", "IR Receiver Sensor (VS1838B)", "IR Remote Control", "4-Channel Relay Module" ]
-  ],
+[ "IoT & Automation", "🗺️", "GPS Map Navigator", "ESP32 GPS navigation device with live location tracking, route guidance and destination navigation.", "https://i.postimg.cc/xC7GWwQ8/mapnavigator.webp", "",
+  [ "ESP32", "GPS", "Maps API" ]
+],
 
-  // --- AI & Computer Vision ---
-  [ "AI & Computer Vision", "🐾", "ESP32 C3 AI Bot", "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.", "bot.jpg", "",
-    [ "ESP32", "Voice Control", "Wi-Fi" ]
-  ],
 
-  [ "AI & Computer Vision", "🚗", "Zone Based ADAS", "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.", "IMG_4858.jpg", "",
-    [ "Python", "OpenCV", "Computer Vision" ]
-  ],
+// =====================================================
+// HOME AUTOMATION
+// =====================================================
 
-  // --- Assistive Technology ---
-  [ "Assistive Technology", "🖐️", "Bionic Hand", "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.", "EF02E9BF-4A24-4261-AA2E-4B292B1214C6.PNG", "",
-    [ "EMG Sensor", "Arduino", "Servo Motors" ]
-  ],
+[ "Home Automation", "🔐", "Keypad-Based Door Lock System", "A password-based electronic door lock system using a matrix keypad and LCD display for secure access.", "IMG_4859.JPG", "",
+  [ "Arduino Uno", "4x4 Matrix Keypad", "Solenoid Door Lock", "Relay Module", "16x2 LCD", "Buzzer" ]
+],
 
-  [ "Assistive Technology", "🧤", "Sign Language to Text Conversion Using Flex Sensor", "A wearable glove-based system that uses flex sensors to detect finger movements and converts recognized sign gestures into text using a microcontroller.", "images.jpeg", "",
-    [ "Arduino Uno / ESP32", "Flex Sensors", "Glove", "Resistors", "LCD Display", "Jumper Wires", "Power Supply" ]
-  ],
+[ "Home Automation", "🏠", "Bluetooth Home Automation", "Arduino Uno home automation with IR remote and HC-05 Bluetooth control, mobile app and DHT11 monitoring.", "automation.png", "",
+  [ "Arduino Uno", "HC-05", "Relay", "DHT11" ]
+],
 
-  [ "Assistive Technology", "🚁", "Obstacle Detection Smart Walking Stick", "Assistive walking stick that detects nearby obstacles and alerts users through vibration and buzzer feedback.", "IMG_4867.JPG", "",
-    [ "Arduino Nano", "Ultrasonic Sensor", "Vibration Motor", "Buzzer", "Battery" ]
-  ],
+[ "Home Automation", "📺", "IR-Based Home Automation using Arduino", "IR-based home automation system that controls electrical appliances wirelessly using an IR remote and relay module.", "IR home .png", "",
+  [ "Arduino Uno / ESP32 Development Board", "IR Receiver Sensor (VS1838B)", "IR Remote Control", "4-Channel Relay Module" ]
+],
 
-  // --- Healthcare & Biomedical ---
-  [ "Healthcare & Biomedical", "❤️", "Heart Rate Monitoring System", "Real-time heart rate monitoring system that measures pulse rate using a heart rate sensor and displays BPM readings on an LCD or mobile dashboard.", "IMG_4855.JPG", "",
-    [ "ESP32", "MAX30102 Heart Rate Sensor", "OLED Display", "Wi-Fi", "BPM Monitoring" ]
-  ],
 
-  [ "Healthcare & Biomedical", "💊", "Smart Medicine Reminder", "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.", "clock.png", "",
-    [ "Arduino", "RTC", "LCD", "Buzzer" ]
-  ],
+// =====================================================
+// AI & COMPUTER VISION
+// =====================================================
 
-  // --- Power Electronics ---
-  [ "Power Electronics", "🔌", "12V DC to 220V AC Inverter", "DC-to-AC power conversion system that converts a 12V DC input into approximately 220V AC output using an inverter circuit.", "IMG_4851.JPG", "",
-    [ "12V Battery", "MOSFET", "Transformer", "Oscillator Circuit" ]
-  ],
+[ "AI & Computer Vision", "🐾", "ESP32 C3 AI Bot", "ESP32 desktop AI companion with voice interaction, smart replies, Wi-Fi and expressive behaviour.", "bot.jpg", "",
+  [ "ESP32", "Voice Control", "Wi-Fi" ]
+],
 
-  // --- Embedded Systems & Hardware ---
-  [ "Embedded Systems & Hardware", "🖱️", "Air Mouse", "Motion-controlled wireless mouse that uses hand movements and an inertial sensor to control the computer cursor without a physical mouse.", "airmouse.png", "",
-    [ "ESP32-C3", "MPU6050", "Bluetooth HID", "Wireless Control" ]
-  ],
+[ "AI & Computer Vision", "🚗", "Zone Based ADAS", "Python and OpenCV driver-assistance system that detects vehicles and pedestrians and warns of collisions by zone.", "IMG_4858.jpg", "",
+  [ "Python", "OpenCV", "Computer Vision" ]
+],
 
-  [ "Embedded Systems & Hardware", "🎮", "AirPad Wireless Controller", "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.", "airpad.png", "",
-    [ "ESP32", "MPU6050", "Bluetooth HID" ]
-  ],
 
-  [ "Embedded Systems & Hardware", "🔧", "ESP32 Development Board", "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.", "si.png", "",
-    [ "ESP32", "PCB Design", "IoT" ]
+// =====================================================
+// ASSISTIVE TECHNOLOGY
+// =====================================================
+
+[ "Assistive Technology", "🖐️", "Bionic Hand", "EMG-based prosthetic hand that turns muscle signals into finger movement using Arduino and servo motors.", "EF02E9BF-4A24-4261-AA2E-4B292B1214C6.PNG", "",
+  [ "EMG Sensor", "Arduino", "Servo Motors" ]
+],
+
+[ "Assistive Technology", "🧤", "Sign Language to Text Conversion Using Flex Sensor", "A wearable glove-based system that uses flex sensors to detect finger movements and converts recognized sign gestures into text using a microcontroller.", "images.jpeg", "",
+  [ "Arduino Uno / ESP32", "Flex Sensors", "Glove", "Resistors", "LCD Display", "Jumper Wires", "Power Supply" ]
+],
+
+[ "Assistive Technology", "🚁", "Obstacle Detection Smart Walking Stick", "Assistive walking stick that detects nearby obstacles and alerts users through vibration and buzzer feedback.", "IMG_4867.JPG", "",
+  [ "Arduino Nano", "Ultrasonic Sensor", "Vibration Motor", "Buzzer", "Battery" ]
+],
+
+
+// =====================================================
+// HEALTHCARE & BIOMEDICAL
+// =====================================================
+
+[ "Healthcare & Biomedical", "❤️", "Heart Rate Monitoring System", "Real-time heart rate monitoring system that measures pulse rate using a heart rate sensor and displays BPM readings on an LCD or mobile dashboard.", "IMG_4855.JPG", "",
+  [ "ESP32", "MAX30102 Heart Rate Sensor", "OLED Display", "Wi-Fi", "BPM Monitoring" ]
+],
+
+[ "Healthcare & Biomedical", "💊", "Smart Medicine Reminder", "Arduino healthcare reminder using an RTC module, LCD and buzzer to alert users at medicine times.", "clock.png", "",
+  [ "Arduino", "RTC", "LCD", "Buzzer" ]
+],
+
+[
+  "Healthcare & Biomedical",
+  "🦵",
+  "Knee Angle Measurement System",
+  "Wearable system that measures knee bending using a flex sensor, with potentiometer-based adjustment and real-time angle display on an I2C LCD.",
+  "KNEE.png",
+  "",
+  [
+    "Arduino UNO",
+    "Flex Sensor",
+    "10K Potentiometer",
+    "I2C LCD Display",
+    "Wearable Knee Straps"
   ]
+],
+
+
+// =====================================================
+// ELECTRONICS
+// =====================================================
+
+[ "Electronics", "⚡", "Wireless AC Tester", "Wireless AC voltage detection and indication system designed to identify the presence of AC voltage and provide a visual or wireless alert.", "IMG_2122_Original.JPG", "",
+  [ "AC Voltage Sensor", "ESP32", "Wireless Communication", "LED Indicator" ]
+],
+
+[ "Electronics", "🔬", "Transistor Tester", "Electronic testing device designed to identify transistor types and check component terminals and basic operating characteristics.", "IMG_0714_Original.JPG", "",
+  [ "Arduino Uno", "NPN Transistor", "PNP Transistor", "16x2 LCD" ]
+],
+
+
+// =====================================================
+// POWER ELECTRONICS
+// =====================================================
+
+[ "Power Electronics", "🔌", "12V DC to 220V AC Inverter", "DC-to-AC power conversion system that converts a 12V DC input into approximately 220V AC output using an inverter circuit.", "IMG_4851.JPG", "",
+  [ "12V Battery", "MOSFET", "Transformer", "Oscillator Circuit" ]
+],
+
+
+// =====================================================
+// EMBEDDED SYSTEMS & HARDWARE
+// =====================================================
+
+[ "Embedded Systems & Hardware", "🖱️", "Air Mouse", "Motion-controlled wireless mouse that uses hand movements and an inertial sensor to control the computer cursor without a physical mouse.", "airmouse.png", "",
+  [ "ESP32-C3", "MPU6050", "Bluetooth HID", "Wireless Control" ]
+],
+
+[ "Embedded Systems & Hardware", "🎮", "AirPad Wireless Controller", "ESP32 wireless air mouse and game controller that turns hand motion into cursor and gaming input over Bluetooth.", "airpad.png", "",
+  [ "ESP32", "MPU6050", "Bluetooth HID" ]
+],
+
+[ "Embedded Systems & Hardware", "🔧", "ESP32 Development Board", "Smart ESP32 development board with Wi-Fi, Bluetooth, automatic polarity detection and an optimised PCB.", "si.png", "",
+  [ "ESP32", "PCB Design", "IoT" ]
+]
 
 ];
-
 
 /* =========================================================
    STATE
