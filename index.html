@@ -634,7 +634,7 @@ h1 em{
 }
 
 .hero p.lead{
-  color:#5d6882;
+  color:#000000;
   font-size:clamp(17px,1.4vw,22px);
   max-width:620px;
   margin:0 0 28px;
@@ -1264,6 +1264,41 @@ footer .copy{
   .hero .form{
     max-width:620px;
   }
+  /* Transparent Hero Form */
+.hero form {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Transparent Form Fields */
+.hero form input,
+.hero form select,
+.hero form textarea {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #1e293b;
+}
+
+/* Placeholder Text */
+.hero form input::placeholder,
+.hero form textarea::placeholder {
+    color: #64748b;
+}
+
+/* Focus Effect */
+.hero form input:focus,
+.hero form select:focus,
+.hero form textarea:focus {
+    background: rgba(255, 255, 255, 0.45) !important;
+    border-color: #ff6a2b;
+    outline: none;
+}
 
   footer .cols{
     grid-template-columns:1fr 1fr;
@@ -1745,7 +1780,8 @@ footer .copy{
 </div>
 
 
-   <style>/* =========================================
+   <style>
+   /* =========================================
     MOBILE NAVBAR - FIXED
  ========================================= */
  
@@ -1932,7 +1968,56 @@ footer .copy{
      height: 56px;
    }
  
- }</style>
+ }.hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.50),
+      rgba(255, 255, 255, 0.50)
+    ),
+    url("hero-bg.jpg") center / cover no-repeat;
+
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Keep hero content above the background */
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile background positioning */
+@media (max-width: 600px) {
+  .hero {
+    background-position: center;
+  }
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.05)
+    ),
+    url("hero-bg.jpg") center / cover no-repeat;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+ </style>
 
   </div>
 
@@ -4034,7 +4119,7 @@ window.addEventListener(
 }
 html, body {
   background: #ffffff !important;
-  color: #0b1220;
+  color: #2e4168;
 }
 /* Main page regions, including the hero, use a pure white canvas. */
 header, nav, main, section, footer, .hero, .lab-office-section {
@@ -4045,9 +4130,9 @@ header, nav, main, section, footer, .hero, .lab-office-section {
 .hero h1, .hero h2, .hero h3, .hero p, .hero .lead,
 .hero .stats, .hero .stats b, .hero .stats span,
 .hero .pill, .hero label {
-  color: #0b1220 !important;
+  color: #000000 !important;
 }
-.hero p.lead { color: #5d6882 !important; }
+.hero p.lead { color: #fcfcfc !important; }
 .hero .pill {
   background: #f3f5f9 !important;
   border-color: #dce2ec !important;
