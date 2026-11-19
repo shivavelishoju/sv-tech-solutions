@@ -1968,7 +1968,10 @@ footer .copy{
      height: 56px;
    }
  
- }.hero {
+   
+ }
+
+ .hero {
   position: relative;
   overflow: hidden;
 
@@ -2697,7 +2700,353 @@ footer .copy{
   </div>
 </section>
 
+<!-- GOOGLE MAP LOCATION -->
+
+
+<!-- =====================================
+     SV TECH SOLUTIONS - GOOGLE MAP
+===================================== -->
+
+<section class="location-section" id="location">
+
+  <!-- SECTION HEADING -->
+  <div class="section-heading">
+
+
+      <span class="eyebrow rv">FIND US</span>
+
+      <h2>Visit SV Tech Solutions</h2>
+
+      <p>
+          Find our workspace and connect with us for
+          engineering projects and innovative solutions.
+      </p>
+
+  </div>
+
+  <!-- FULL WIDTH GOOGLE MAP -->
+  <div class="map-container">
+
+      <iframe
+          src="https://maps.google.com/maps?q=17.52886390686035,78.29518127441406&z=17&output=embed"
+          title="SV Tech Solutions Office Location"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+  </div>
+
+  <!-- GET DIRECTIONS BUTTON -->
+  <div class="map-action">
+
+      <a
+          href="https://www.google.com/maps/dir/?api=1&destination=17.52886390686035,78.29518127441406"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-button">
+
+          Get Directions
+          <span>↗</span>
+
+      </a>
+
+  </div>
+
+</section>
+
+
 <style>
+
+/* =====================================
+ LOCATION SECTION
+===================================== */
+
+.location-section {
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+  padding: 65px 0 35px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+
+.location-section * {
+
+  box-sizing: border-box;
+
+}
+
+
+/* =====================================
+ SECTION HEADING
+===================================== */
+
+.location-section .section-heading {
+
+  width: 100%;
+
+  padding: 0 5%;
+
+  margin: 0 auto 30px;
+
+  text-align: left;
+
+}
+
+.location-label {
+
+  display: inline-block;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+
+}
+
+.location-section .section-heading h2 {
+
+  font-size: clamp(26px, 3.5vw, 38px);
+
+  font-weight: 800;
+
+  color: #111827;
+
+  margin: 8px 0 12px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+
+}
+
+.location-section .section-heading p {
+
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+}
+
+
+/* =====================================
+ FULL WIDTH GOOGLE MAP
+===================================== */
+
+.location-section .map-container {
+    width: calc(100% - 120px);
+    max-width: none;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.location-section .map-container iframe {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+}
+
+
+/* =====================================
+ DIRECTIONS BUTTON
+===================================== */
+
+.location-section .map-action {
+
+  width: 100%;
+
+  padding: 0 5%;
+
+  margin-top: 25px;
+
+  text-align: left;
+
+}
+
+.location-section .map-button {
+
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 25px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+
+}
+
+.location-section .map-button:hover {
+
+  background: #1d4ed8;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+
+}
+
+.location-section .map-button span {
+
+  font-size: 18px;
+
+}
+
+
+/* =====================================
+ TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+  .location-section {
+
+      padding-top: 50px;
+
+  }
+
+  .location-section .map-container {
+
+      height: 400px;
+
+  }
+
+}
+
+
+/* =====================================
+ MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .location-section {
+
+      padding-top: 40px;
+
+      padding-bottom: 25px;
+
+  }
+
+  .location-section .section-heading {
+
+      padding: 0 18px;
+
+      margin-bottom: 22px;
+
+  }
+
+  .location-section .section-heading h2 {
+
+      font-size: 26px;
+
+  }
+
+  .location-section .section-heading p {
+
+      font-size: 13px;
+
+  }
+
+  .location-section .map-container {
+
+      width: 100%;
+
+      height: 320px;
+
+  }
+
+  .location-section .map-action {
+
+      padding: 0 18px;
+
+      margin-top: 20px;
+
+  }
+
+  .location-section .map-button {
+
+      width: 100%;
+
+      padding: 14px 20px;
+
+      justify-content: center;
+
+  }
+
+}
+
+
+/* =====================================
+ SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+
+  .location-section .section-heading h2 {
+
+      font-size: 23px;
+
+  }
+
+  .location-section .map-container {
+
+      height: 270px;
+
+  }
+
+}
+
+</style>
+
+
+
+
+<style>
+
   /* LAB & OFFICE SECTION */
   
   .lab-office-section {
